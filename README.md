@@ -3,4 +3,4 @@
 
 ***
 Проект социальной сети - "Социалочка"
-![Логоттип](https://github.com/tensor-nsk-lesson/Social_network_2/logo.png)
+![Логоттип](https://github.com/tensor-nsk-lesson/Social_network_2/logo.jpg)
