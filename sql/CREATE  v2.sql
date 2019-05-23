@@ -32,12 +32,6 @@ CREATE TABLE IF NOT EXISTS "Administrators" (
 	"role" int not null
 ) WITHOUT OIDS;
 
-CREATE TABLE IF NOT EXISTS "Blacklist" ( 
-	"id" serial not null,
-	"blocked_id" int ARRAY not null,
-	PRIMARY KEY ("id")
-) WITHOUT OIDS;
-
 CREATE TABLE IF NOT EXISTS "CPosts" ( 
 	"comm_id" serial not null,
 	"post_id" int not null
@@ -63,9 +57,10 @@ CREATE TABLE IF NOT EXISTS "AllDialogs" (
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "Friendlist" ( 
-	"id" serial not null,
-	"friend_id" int ARRAY not null,
-	PRIMARY KEY ("id")
+	"user_id" serial not null,
+	"friend_id" int not null,
+	"state_id" smallint not null,
+	PRIMARY KEY ("user_id")
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "Gender" ( 
@@ -108,14 +103,6 @@ CREATE TABLE IF NOT EXISTS "Post" (
 	PRIMARY KEY ("id")
 ) WITHOUT OIDS;
 
-CREATE TABLE IF NOT EXISTS "Reg" ( 
-	"id" serial not null,
-	"email" text not null,
-	"phone" text not null,
-	"password" text not null,
-	PRIMARY KEY ("id")
-) WITHOUT OIDS;
-
 CREATE TABLE IF NOT EXISTS "Roles" ( 
 	"id" serial not null,
 	"name" text not null,
@@ -135,6 +122,9 @@ CREATE TABLE IF NOT EXISTS "UPosts" (
 
 CREATE TABLE IF NOT EXISTS "User" ( 
 	"id" serial not null,
+	"email" text not null,
+	"password" text not null,
+	"phone" text not null,
 	"first_name" text not null,
 	"second_name" text not null,
 	"middle_name" text not null,
@@ -159,9 +149,6 @@ ALTER TABLE "Administrators"
 ALTER TABLE "Administrators" 
 	ADD CONSTRAINT "Roles_fk_role" FOREIGN KEY ("role") REFERENCES "Roles" ("id");
 
-ALTER TABLE "Blacklist" 
-	ADD CONSTRAINT "User_fk_id" FOREIGN KEY ("id") REFERENCES "User" ("id");
-
 ALTER TABLE "CPosts" 
 	ADD CONSTRAINT "Communities_fk_comm_id" FOREIGN KEY ("comm_id") REFERENCES "Communities" ("id");
 ALTER TABLE "CPosts" 
@@ -176,7 +163,9 @@ ALTER TABLE "AllDialogs"
 	ADD CONSTRAINT "Dialog_fk_dialog_id" FOREIGN KEY ("dialog_id") REFERENCES "Dialog" ("id");
 
 ALTER TABLE "Friendlist" 
-	ADD CONSTRAINT "User_fk_user_id" FOREIGN KEY ("id") REFERENCES "User" ("id");
+	ADD CONSTRAINT "User_fk_user_id" FOREIGN KEY ("user_id") REFERENCES "User" ("id");
+ALTER TABLE "Friendlist" 
+	ADD CONSTRAINT "User_fk_friend_id" FOREIGN KEY ("friend_id") REFERENCES "User" ("id");
 	
 ALTER TABLE "Likes" 
 	ADD CONSTRAINT "Post_fk_post_id" FOREIGN KEY ("post_id") REFERENCES "Post" ("id");	
@@ -198,6 +187,4 @@ ALTER TABLE "UPosts"
 
 ALTER TABLE "User" 
 	ADD CONSTRAINT "Gender_fk_gender" FOREIGN KEY ("gender") REFERENCES "Gender" ("id");
-ALTER TABLE "User" 
-	ADD CONSTRAINT "Reg_fk_id_reg" FOREIGN KEY ("id") REFERENCES "Reg" ("id");
 		
