@@ -9,10 +9,13 @@ INSERT INTO User (first_name, second_name, middle_name, gender, birthday, countr
 ('Петров', 'Кирилл', 'Анатольевич', 3, '04.04.2000', 12, 2, 'public/style/img/face_kirill.jpg', false, false );
 
 
---Решаем вопросик
---INSERT INTO Friends (user_id) VALUES
---(1,2,3),
---(2)
+INSERT INTO Friends (user_id, friend_id) VALUES
+(1, 2),
+(2, 1),
+(0, 1);
+
+INSERT INTO Post (id, content_id) VALUES
+(0, 1);
 
 INSERT INTO Gender (name) VALUES
 ('Бесполый'),
@@ -23,9 +26,9 @@ INSERT INTO Gender (name) VALUES
 ('Межполовой');
 
 
---Решаем вопросик
---INSERT INTO UPosts
-
+INSERT INTO UPosts (user_id, post_id) VALUES
+(1, 2),
+(0, 1);
 
 INSERT INTO Post (content_id) VALUES
 (1), (2), (4);
@@ -36,8 +39,8 @@ INSERT INTO PContent (content) VALUES
 ('Еще более интереный контент'),
 ('Контент не очень, но суть неплохая');
 
-INSERT INTO Likes (amount) VALUES
-(0), (1), (2);
+INSERT INTO Likes (post_id, amount) VALUES
+(1, 0), (1, 1), (0, 2);
 
 INSERT INTO Communities (name, topic, desc, photo) VALUES
 ('Новости', 1, 'Группа новостей', 'МЫ умнички', 'public/style/img/group.jpg');
