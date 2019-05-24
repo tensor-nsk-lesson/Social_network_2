@@ -59,8 +59,7 @@ CREATE TABLE IF NOT EXISTS "AllDialogs" (
 CREATE TABLE IF NOT EXISTS "Friendlist" ( 
 	"user_id" serial not null,
 	"friend_id" int not null,
-	"state_id" smallint not null,
-	PRIMARY KEY ("user_id")
+	"state_id" smallint not null
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "Gender" ( 
