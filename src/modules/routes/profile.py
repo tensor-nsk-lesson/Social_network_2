@@ -1,5 +1,6 @@
 from . import routes
 from modules.database import db
+from flask import request
 
 
 #Запросы профиля
@@ -44,3 +45,4 @@ def put_one_friend(id):
 @routes.route('/profile/<int:u_id>/allmessage', methods=["GET"])
 def get_all_message(u_id):
     return db.execute_sql('SELECT dialog_id FROM \"AllDialogs\" d WHERE d.user_id = ' + u_id.__str__())
+
