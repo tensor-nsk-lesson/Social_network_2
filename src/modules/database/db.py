@@ -6,10 +6,8 @@ def execute_sql(query):
 	cur.execute(query)
 	try:
 		ans = cur.fetchall()
-		print(ans)
 	except Exception as e:
-		print(e)
-		return 401
+		return e
 	finally:
 		cur.close()
 		conn.close()
