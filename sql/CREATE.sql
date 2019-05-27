@@ -29,7 +29,19 @@ DROP TABLE IF EXISTS"User" CASCADE;
 CREATE TABLE IF NOT EXISTS "Administrators" ( 
 	"comm_id" serial not null,
 	"user_id" int not null,
-	"role" int not null
+	"role_id" int not null
+) WITHOUT OIDS;
+
+CREATE TABLE IF NOT EXISTS "AllDialogs" ( 
+	"user_id" serial not null,
+	"dialog_id" int not null
+) WITHOUT OIDS;
+
+CREATE TABLE IF NOT EXISTS "City" (
+	"id" serial not null,
+	"name" text not null,
+	"country_id" int not null,
+	PRIMARY KEY ("id")
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "CPosts" ( 
@@ -40,20 +52,21 @@ CREATE TABLE IF NOT EXISTS "CPosts" (
 CREATE TABLE IF NOT EXISTS "Communities" ( 
 	"id" serial not null,
 	"name" text not null,
-	"topic" int not null,
+	"topic_id" int not null,
 	"desc" text not null,
 	"photo" text not null,
+	PRIMARY KEY ("id")
+) WITHOUT OIDS;
+
+CREATE TABLE IF NOT EXISTS "Country" (
+	"id" serial not null,
+	"name" text not null,
 	PRIMARY KEY ("id")
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "Dialog" ( 
 	"id" serial not null,
 	PRIMARY KEY ("id")
-) WITHOUT OIDS;
-
-CREATE TABLE IF NOT EXISTS "AllDialogs" ( 
-	"user_id" serial not null,
-	"dialog_id" int not null
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "Friendlist" ( 
@@ -119,6 +132,11 @@ CREATE TABLE IF NOT EXISTS "UPosts" (
 	"post_id" int not null
 ) WITHOUT OIDS;
 
+CREATE TABLE IF NOT EXISTS "USubs" (
+	"user_id" int not null,
+	"comm_id" int not null
+) WITHOUT OIDS;
+
 CREATE TABLE IF NOT EXISTS "User" ( 
 	"id" serial not null,
 	"email" text not null,
@@ -127,10 +145,10 @@ CREATE TABLE IF NOT EXISTS "User" (
 	"first_name" text not null,
 	"second_name" text not null,
 	"middle_name" text not null,
-	"gender" int not null,
+	"gender_id" int not null,
 	"birthday" date not null,
-	"country" text not null,
-	"city" text not null,
+	"country_id" int not null,
+	"city_id" int not null,
 	"photo" text not null,
 	"verification" boolean not null,
 	"private" boolean not null,
@@ -146,7 +164,15 @@ ALTER TABLE "Administrators"
 ALTER TABLE "Administrators" 
 	ADD CONSTRAINT "User_fk_user_id" FOREIGN KEY ("user_id") REFERENCES "User" ("id");
 ALTER TABLE "Administrators" 
-	ADD CONSTRAINT "Roles_fk_role" FOREIGN KEY ("role") REFERENCES "Roles" ("id");
+	ADD CONSTRAINT "Roles_fk_role" FOREIGN KEY ("role_id") REFERENCES "Roles" ("id");
+
+ALTER TABLE "AllDialogs" 
+	ADD CONSTRAINT "User_fk_iser_id" FOREIGN KEY ("user_id") REFERENCES "User" ("id");
+ALTER TABLE "AllDialogs" 
+	ADD CONSTRAINT "Dialog_fk_dialog_id" FOREIGN KEY ("dialog_id") REFERENCES "Dialog" ("id");
+
+ALTER TABLE "City"
+	ADD CONSTRAINT "Country_fk_county_id" FOREIGN KEY ("country_id") REFERENCES "Country" ("id");
 
 ALTER TABLE "CPosts" 
 	ADD CONSTRAINT "Communities_fk_comm_id" FOREIGN KEY ("comm_id") REFERENCES "Communities" ("id");
@@ -154,12 +180,7 @@ ALTER TABLE "CPosts"
 	ADD CONSTRAINT "Post_fk_post_id" FOREIGN KEY ("post_id") REFERENCES "Post" ("id");
 
 ALTER TABLE "Communities" 
-	ADD CONSTRAINT "Topics_fk_topic" FOREIGN KEY ("topic") REFERENCES "Topics" ("id");
-
-ALTER TABLE "AllDialogs" 
-	ADD CONSTRAINT "User_fk_iser_id" FOREIGN KEY ("user_id") REFERENCES "User" ("id");
-ALTER TABLE "AllDialogs" 
-	ADD CONSTRAINT "Dialog_fk_dialog_id" FOREIGN KEY ("dialog_id") REFERENCES "Dialog" ("id");
+	ADD CONSTRAINT "Topics_fk_topic" FOREIGN KEY ("topic_id") REFERENCES "Topics" ("id");
 
 ALTER TABLE "Friendlist" 
 	ADD CONSTRAINT "User_fk_user_id" FOREIGN KEY ("user_id") REFERENCES "User" ("id");
@@ -184,6 +205,14 @@ ALTER TABLE "UPosts"
 ALTER TABLE "UPosts" 
 	ADD CONSTRAINT "Post_fk_post_id" FOREIGN KEY ("post_id") REFERENCES "Post" ("id");
 
+ALTER TABLE "USubs"
+	ADD CONSTRAINT "User_fk_user_id" FOREIGN KEY ("user_id") REFERENCES "User" ("id");
+ALTER TABLE "USubs"
+	ADD CONSTRAINT "Communities_fk_comm_id" FOREIGN KEY ("comm_id") REFERENCES "Communities" ("id");
+
 ALTER TABLE "User" 
-	ADD CONSTRAINT "Gender_fk_gender" FOREIGN KEY ("gender") REFERENCES "Gender" ("id");
-		
+	ADD CONSTRAINT "Gender_fk_gender" FOREIGN KEY ("gender_id") REFERENCES "Gender" ("id");
+ALTER TABLE "User" 
+	ADD CONSTRAINT "City_fk_city_id" FOREIGN KEY ("city_id") REFERENCES "City" ("id");
+ALTER TABLE "User" 
+	ADD CONSTRAINT "Country_fk_country_id" FOREIGN KEY ("country_id") REFERENCES "Country" ("id");
