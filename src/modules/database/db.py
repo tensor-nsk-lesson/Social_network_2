@@ -9,6 +9,7 @@ def execute_sql(query):
 	except Exception as e:
 		return e
 	finally:
+		conn.commit()
 		cur.close()
 		conn.close()
 		return jsonify(ans)
