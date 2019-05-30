@@ -149,3 +149,17 @@ INSERT INTO "USubs"
 	VALUES (4, 1);
 INSERT INTO "USubs"
 	VALUES (4, 2);
+	
+--Очистка тестовых данных
+
+DELETE FROM "Friendlist";
+DELETE FROM "Message";
+DELETE FROM "Administrators";
+DELETE FROM "User";
+DELETE FROM "Dialog";
+DELETE FROM "MContent";
+DELETE FROM "Gender";
+DELETE FROM "Reg";
+DELETE FROM "Roles";
+DELETE FROM "Communities";
+DELETE FROM "Topics";
