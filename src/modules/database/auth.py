@@ -21,5 +21,5 @@ def post_user_new(data):
 def post_user_auth(data):
     password = hash_pass(data['password'])
     sql = "SELECT * FROM \"User\" WHERE email = '%s' AND password = '%s' OR phone = '%s' AND password = '%s'" % (data['email'], password, data['phone'], password) 
-    return db.execute_sql(sql, True)
+    return db.execute_sql(sql, False)
 
