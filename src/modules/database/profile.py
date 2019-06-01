@@ -2,7 +2,7 @@ from . import db
  
 
 def get_users():
-	sql = 'SELECT * FROM User'
+	sql = 'SELECT * FROM \"User\"'
 	return db.execute_sql(sql, True)
 
 

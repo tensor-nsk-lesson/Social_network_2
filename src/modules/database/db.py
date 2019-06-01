@@ -16,7 +16,7 @@ def execute_sql(query, fetch):
 		else:
 			ans = cur.fetchone()
 
-	except Exception as e:
+	except Exception as err:
 		return '', 500
 	finally:
 		conn.commit()
