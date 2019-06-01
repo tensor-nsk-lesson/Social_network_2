@@ -1,22 +1,37 @@
-from . import routes
+from app import app
 from modules.database import db
+from flask import request
 
-@routes.route('/get/groups', methods=["GET"])
-def get_allgroups():
-	return db.execute_sql('SELECT * FROM \"Communities\"')  # Выборка всех сообществ
+@app.route('/get/groups', methods=["GET"]) # Выборка всех сообществ
+def get_groups():
+    return db.get_groups()
 
 
-
-@routes.route('/get/group/<int:id>', methods=["GET"])
+@app.route('/get/group/<int:id>', methods=["GET"]) # Выборка конкретного сообщества
 def get_group(id):
-	return db.execute_sql('SELECT * FROM \"Communities\" c WHERE c.id = %s' % id) # Выборка конкретного сообщества
+	return db.get_group(id)
 
 
-@routes.route('/get/group/<int:id>/administators', methods=["GET"])
-def get_group_admins(id):
-	return db.execute_sql('SELECT * FROM \"Administrators\" a WHERE a.comm_id = %s' % id)  # Выборка всех сообществ
+@app.route('/get/group/<int:id>/administators', methods=["GET"])
+def get_admins(id):
+	return db.get_groups_admins(id)
 
 
-@routes.route('/post/group/new', methods=["GET"])
+@app.route('/post/group/new', methods=["POST"]) # Создание нового сообщества
 def create_group():
-	return db.execute_sql('SELECT * FROM \"Administrators\" a WHERE a.comm_id = %s' % id)  # Выборка всех сообществ
+	data = request.get_json()
+	db.post_create_group_new()
+	return 200
+
+
+@app.route('/post/group/<int:id>/post/new', methods=["POST"])  # Создание нового поста сообществом
+def create_group_post(id):
+	data = request.get_json()
+	db.post_group_post_new(id, data)
+	return 200
+
+@app.route('/post/group/<int:id>/administrators/new', methods=["POST"])  # Добавление нового администратора в группу
+def add_group_admin(id):
+	data = request.get_json()
+	db.post_group_admins(id, data)
+	return 200

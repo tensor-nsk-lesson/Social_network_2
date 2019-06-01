@@ -1,64 +1,51 @@
-from . import routes
+from app import app
 from modules.database import db
 from flask import request
 
 
 #Запросы профиля
-@routes.route('/get/users', methods=["GET"])
+@app.route('/get/users', methods=["GET"])
 def get_all_users():
-    return db.get_data('', 'User')
+    return db.get_users()
 
 
-@routes.route('/get/user/<int:id>', methods=["GET"])
+@app.route('/get/user/<int:id>', methods=["GET"])
 def profile(id):
-    return db.get_data_where('','User', 'id', id)  # Выборка конкретного пользователя
+    return db.get_user(id) 
 
 
-@routes.route('/get/user/<int:id>/friends', methods=["GET"])
+@app.route('/get/user/<int:id>/friends', methods=["GET"])
 def get_all_friends(id):
-    return db.get_data_where_and('friend_id', 'Friendlist', 'user_id', id, 'state_id', 2)
-
-'''
-@routes.route('/profile/<int:id>/friends', methods=["POST"])
-def post_all_friends(id):  
-	data = request.json()
-	return db.execute_sql('UPDATE Friendlist f SET state_id = 1 WHERE f.user_id = ' + id.__str__() + ' AND friend_id = ' + data["user_id"])
+    return db.get_user_friends(id)
 
 
-@routes.route('/profile/<int:id>/friends', methods=["PUT"])
-def put_all_friends(id):  
-	data = request.json()
-	return db.execute_sql('UPDATE Friendlist f SET state_id = 2 WHERE f.user_id = ' + id.__str__() + ' AND friend_id = ' + data["user_id"])
-'''
-#Вывод ЧС пользователя
+@app.route('/user/<int:id>/friends', methods=["POST", "PUT"])
+def edit_friends(id):  
+  data = request.json()
+  if request.method == 'POST':
+    return db.post_profile_friends(data)
 
-@routes.route('/get/user/<int:id>/blacklist', methods=["GET"])
-def get_one_friend(id):
-  return db.get_data_where_and('friend_id', 'Friendlist', 'user_id', id, 'state_id', 3)
+  if request.method == 'PUT':
+    return db.put_profile_friends(data)
 
-'''
-@routes.route('/profile/<int:id>/blacklist', methods=["PUT"])
-def put_one_friend(id):
-	data = request.json()
-	return db.execute_sql('UPDATE Friendlist f SET state_id = 3 WHERE f.user_id = ' + id.__str__() + ' AND friend_id = ' + data["user_id"])
-'''
 
-@routes.route('/get/user/<int:id>/dialogs', methods=["GET"])
-def message(id):
-  return db.get_data_where('dialog_id','AllDialogs', 'user_id', id) 
+@app.route('/get/user/<int:id>/blacklist', methods=["GET"])  # Выборка ЧС пользователя
+def get_blacklist(id):
+  return db.get_user_blacklist(id)
 
-'''
-@routes.route('/get/user/<int:id>/posts', methods=["GET"])  # Выборка постов пользователя
-def get_user_posts(id):
-   return db.execute_sql('SELECT * FROM \"UPosts\" u, \"PContent\" p WHERE u.user_id = %s AND u.post_id = p.id' % id)
-'''
-''' Необходимо добавить функцию в db.py
-@app.route('/post/user/<int:id>/post/new', methods=["POST"])  # Создание поста пользователем
+
+@app.route('/get/user/<int:id>/dialogs', methods=["GET"])  # Выборка диалогов пользователя
+def get_dialogs(id):
+  return db.get_user_dialogs(id)
+
+
+@app.route('/get/user/<int:id>/posts', methods=["GET"])  # Выборка постов пользователя
+def get_posts(id):
+    return db.get_user_posts(id)
+
+
+@app.route('/user/<int:id>/post/new', methods=["POST"])  # Создание поста пользователем
 def create_user_post(id):
     data = request.get_json()
-  #  cur.execute('''#INSERT INTO \"PContent\" VALUES (%s, %s)''', (data["content_id"], data["content"]))
-  #  cur.execute('''INSERT INTO \"Post\" VALUES (%s, %s, %s)''',
- #               (data["content_id"], data["content_id"], data["date_time"]))
-  #  cur.execute('''INSERT INTO \"UPosts\" (user_id, post_id) VALUES (%s, %s)''', (id, data["content_id"]))
- #   conn.commit()
-  #  return "OK"
+    db.user_post_new(id,data)
+    return 200
