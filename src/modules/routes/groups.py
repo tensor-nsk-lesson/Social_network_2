@@ -33,5 +33,5 @@ def create_group_post(id):
 @app.route('/post/group/<int:id>/administrators/new', methods=["POST"])  # Добавление нового администратора в группу
 def add_group_admin(id):
 	data = request.get_json()
-	db.post_group_admins(id, data)
-	return 200
+	return db.post_group_admins(id, data)
+
