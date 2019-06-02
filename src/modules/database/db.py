@@ -17,7 +17,7 @@ def execute_sql(query, fetch):
 				ans.append(dict(zip(columns, row)))
 		else:
 			columns = [column[0] for column in cur.description]
-			for row in cur.fetchall():
+			for row in cur.fetchone():
 				ans.append(dict(zip(columns, row)))
 
 	except Exception as err:
