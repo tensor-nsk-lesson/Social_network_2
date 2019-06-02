@@ -32,16 +32,20 @@ INSERT INTO "City"
 INSERT INTO "City"
 	VALUES (4, 'Самара', 1);
 
-INSERT INTO "User" 
+INSERT INTO "User" ("id", "email", "password", "phone", "first_name", "second_name", "middle_name",
+	"gender_id", "birthday", "country_id", "city_id", "photo", "verification", "private")
 	VALUES (1, 'PetrovPP@gmail.com', 'passwrod123', '8-953-486-45-12', 'Петр', 'Петров', 'Петрович', 1,
 			'01.01.2000', 1, 3, 'public/style/img/face_petr.jpg', true, true);
-INSERT INTO "User"
+INSERT INTO "User" ("id", "email", "password", "phone", "first_name", "second_name", "middle_name",
+	"gender_id", "birthday", "country_id", "city_id", "photo", "verification", "private")
 	VALUES (2, 'GrishkinAN@gmail.com', 'artemthegod', '8-957-123-45-98', 'Артем', 'Гришкин', 'Николаевич', 2,
 			'02.02.2000', 1, 4, 'public/style/img/face_artem.jpg', true, false);
-INSERT INTO "User" 
+INSERT INTO "User" ("id", "email", "password", "phone", "first_name", "second_name", "middle_name",
+	"gender_id", "birthday", "country_id", "city_id", "photo", "verification", "private")
 	VALUES (3, 'IgnatievSF@gmail.com', 'igsefe2000', '8-951-456-12-45', 'Сергей', 'Игнатьев', 'Федорович', 6,
 			'03.03.2000', 1, 1, 'public/style/img/face_sergey.jpg', false, true);
-INSERT INTO "User"
+INSERT INTO "User" ("id", "email", "password", "phone", "first_name", "second_name", "middle_name",
+	"gender_id", "birthday", "country_id", "city_id", "photo", "verification", "private")
 	VALUES (4, 'PetrovKA@gmail.com', 'ruletheworld', '8-953-682-64-35', 'Кирилл', 'Петров', 'Анатольевич', 3,
 			'04.04.2000', 1, 2, 'public/style/img/face_kirill.jpg', false, false);
 
@@ -155,11 +159,19 @@ INSERT INTO "USubs"
 DELETE FROM "Friendlist";
 DELETE FROM "Message";
 DELETE FROM "Administrators";
+DELETE FROM "AllDialogs";
+DELETE FROM "UPosts";
+DELETE FROM "USubs";
 DELETE FROM "User";
 DELETE FROM "Dialog";
 DELETE FROM "MContent";
 DELETE FROM "Gender";
-DELETE FROM "Reg";
 DELETE FROM "Roles";
+DELETE FROM "CPosts";
 DELETE FROM "Communities";
 DELETE FROM "Topics";
+DELETE FROM "City";
+DELETE FROM "Country";
+DELETE FROM "Likes";
+DELETE FROM "Post";
+DELETE FROM "PContent";
