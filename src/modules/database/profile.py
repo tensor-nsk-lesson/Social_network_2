@@ -41,6 +41,6 @@ def get_user_posts(id):
     return db.execute_sql(sql, False)
 
     
-def user_post_new(id, data):
-    sql = '''INSERT INTO \"PContent\" VALUES (%s, %s)''', (data['content_id'], data['content']) + '''; INSERT INTO \"Post\" VALUES (%s, %s, %s) ''', (data["content_id"], data["content_id"], data["date_time"]) + ''';INSERT INTO \"UPosts\" (user_id, post_id) VALUES (%s, %s) ''', (id, data["content_id"]) + ''';'''
-    return db.execute_sql(sql, False)
+#def user_post_new(id, data):
+#    sql = '''INSERT INTO \"PContent\" VALUES (%s, %s); INSERT INTO \"Post\" VALUES (%s, %s, %s);''' % (data['content_id'], data['content'], (data['content_id'], data['content_id'], data['date_time'], id, data['content_id'])
+#    return db.execute_sql(sql, False)
