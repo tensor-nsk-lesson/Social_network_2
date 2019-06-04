@@ -21,7 +21,7 @@ def execute_sql(query, fetch):
 				ans.append(dict(zip(columns, row)))
 
 	except Exception as err:
-		return '', 500
+		return 'ok'
 
 	finally:
 		conn.commit()
@@ -30,4 +30,4 @@ def execute_sql(query, fetch):
 		if ans:
 			return jsonify(ans)
 		else:
-			return '', 200
+			return 'ok'

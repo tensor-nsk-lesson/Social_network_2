@@ -19,40 +19,26 @@ class TestUserAPI(unittest.TestCase):
         self.assertEqual(resp.status_code, 200)
         self.assertIsNotNone(resp.text)
 
-    def test_friend_request(self):
+    def test_friend_request_post(self):
         data = {
             "friend_id": 2,
             "state_id": 1
         }
-        resp = requests.post('http://127.0.0.1:5000/profile/1/friends', json=data)
+        resp = requests.post('http://127.0.0.1:5000/user/1/friends', json=data)
         self.assertEqual(resp.status_code, 200)
         self.assertIsNotNone(resp.text)
 
-    def test_friend_request(self):
+    def test_friend_request_put(self):
         data = {
             "friend_id": 2,
             "state_id": 2
         }
-        resp = requests.put('http://127.0.0.1:5000/profile/1/friends', json=data)
+        resp = requests.put('http://127.0.0.1:5000/user/1/friends', json=data)
         self.assertEqual(resp.status_code, 200)
         self.assertIsNotNone(resp.text)
 
     def test_get_blacklist(self):
         resp = requests.get('http://127.0.0.1:5000/get/user/1/blacklist')
-        self.assertEqual(resp.status_code, 200)
-        self.assertIsNotNone(resp.text)
-
-    def test_add_in_blacklist(self):
-        data = {
-            "friend_id": 2,
-            "state_id": 3
-        }
-        resp = requests.put('http://127.0.0.1:5000/get/user/1/friends', json=data)
-        self.assertEqual(resp.status_code, 200)
-        self.assertIsNotNone(resp.text)
-
-    def test_get_all_message(self):
-        resp = requests.get('http://127.0.0.1:5000/profile/1/allmessage')
         self.assertEqual(resp.status_code, 200)
         self.assertIsNotNone(resp.text)
 
@@ -62,7 +48,7 @@ class TestUserAPI(unittest.TestCase):
         self.assertIsNotNone(resp.text)
 
     def test_get_post(self):
-        resp = requests.get('http://127.0.0.1:5000/get/user/1/post')
+        resp = requests.get('http://127.0.0.1:5000/get/user/1/posts')
         self.assertEqual(resp.status_code, 200)
         self.assertIsNotNone(resp.text)
 
