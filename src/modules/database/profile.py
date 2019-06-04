@@ -17,12 +17,12 @@ def get_user_friends(id):
 
 
 def post_profile_friends(data):
-    sql = 'UPDATE Friendlist f SET state_id = 1 WHERE f.user_id = ' + id.__str__() + ' AND friend_id = ' + data["user_id"]
+    sql = 'UPDATE Friendlist f SET state_id = 1 WHERE f.user_id = ' +  data["user_id"] + ' AND friend_id = ' + data["friend_id"]
     return db.execute_sql(sql, False)
 
 
 def put_profile_friends(data):
-    sql = 'UPDATE Friendlist f SET state_id = 2 WHERE f.user_id = ' + id.__str__() + ' AND friend_id = ' + data["user_id"]
+    sql = 'UPDATE Friendlist f SET state_id = 2 WHERE f.user_id = ' + data["user_id"] + ' AND friend_id = ' + data["friend_id"]
     return db.execute_sql(sql, False)
 
 

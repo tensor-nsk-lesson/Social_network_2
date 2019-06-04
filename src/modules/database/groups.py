@@ -16,8 +16,8 @@ def get_groups_admins(id):
 
 
 def post_create_group_new(data):
-    sql = 'INSERT INTO \"Communities\" (id, name, topic, "desc", photo) VALUES (%s, %s, %s, %s, %s)' % (data["id"], data["name"], data["topic"], data["desc"], data["photo"])
-    return db.execute_sql(sql, False)
+    sql = '''INSERT INTO \"Communities\" (name, topic_id, "desc", photo) VALUES ('%s', '%d', '%s', '%s')''' % (data["name"], data["topic"], data["desc"], data["photo"])
+    return db.execute_sql(sql, True)
 
 
 def	post_group_post_new(id, data):
