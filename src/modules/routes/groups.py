@@ -1,6 +1,8 @@
 from app import app
 from modules.database import db
 from flask import request
+
+from modules.validate import json_schema as ch
 from modules.validate import json_validator as va
 @app.route('/get/groups', methods=["GET"]) # Выборка всех сообществ
 def get_groups():
@@ -20,9 +22,8 @@ def get_admins(id):
 @app.route('/post/group/new', methods=["POST"]) # Создание нового сообщества
 def create_group():
 	data = request.get_json()
-	va.valid(data, 'sch_new_group')
-	db.post_create_group_new(data)
-	return 200
+	if va.valid(data, ch.sch_new_group):
+		return db.post_create_group_new(data)
 
 
 @app.route('/post/group/<int:id>/post/new', methods=["POST"])  # Создание нового поста сообществом

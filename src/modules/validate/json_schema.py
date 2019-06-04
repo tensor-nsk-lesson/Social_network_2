@@ -4,7 +4,10 @@
 sch_new_group = {
     'type': 'object',
     'properties': {
-        'name': {'type': 'string'},
+        'name': {
+            'type': 'string',
+            'pattern': '[^A-Za-z0-9_]'
+            },
         'topic': {'type': 'number'},
         'photo': {'type': 'string'},
         'desc': {'type' : 'string'}
