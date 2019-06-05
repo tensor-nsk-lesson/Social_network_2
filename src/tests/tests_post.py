@@ -61,11 +61,10 @@ class TestGetAPI(unittest.TestCase):
     #Группы
     def test_new_group(self):
         data = {
-            "id": 25,
-            "name": '2019-06-24 20:30',
+            "name": 'Четкие поцанчики',
             "topic": 2,
             "desc": 'ну ты заходи если чё',
-            "photo":  'ну типо катинка'
+            "photo":  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg='
         }
         resp = requests.post(url + '/post/group/new', json=data)
         self.assertEqual(resp.status_code, 200)
@@ -74,7 +73,6 @@ class TestGetAPI(unittest.TestCase):
     def test_new_post_group(self):
         data = {
             "content_id": 1,
-            "data_time": '2019-06-24 21:00',
             "content": 'второй самый популярный пост социалочки'
         }
         resp = requests.post(url + '/post/group/2/post/new', json=data)

@@ -20,8 +20,8 @@ def post_create_group_new(data):
     return db.execute_sql(sql, True)
 
 
-def	post_group_post_new(id, data):
-    sql = "INSERT INTO \"PContent\" VALUES (%s, %s); INSERT INTO \"Post\" (id, content_id)  VALUES (%d, %d); INSERT INTO \"CPosts\" (comm_id, post_id) VALUES (%s, %s)" % (data["content_id"], data["content"], data["content_id"], data["content_id"], id, data["content_id"])
+def	post_group_post_new(data):
+    sql = '''INSERT INTO \"Post\" (id, content)  VALUES ('%d', '%s'); INSERT INTO \"CPosts\" (comm_id, post_id) VALUES ('%d', '%d');''' % (data["content_id"], data["content"], data["group_id"], data["content_id"])
     return db.execute_sql(sql, False)
 
 
