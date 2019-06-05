@@ -14,7 +14,7 @@ sch_new_group = {
             },
         'photo': {
             'type': 'string',
-            'pattern': ''
+            'pattern': '^data:image\/([a-zA-Z]*);base64,([^\"]*)'
             },
         'desc': {
             'type' : 'string',
@@ -61,30 +61,75 @@ sch_new_group_admin = {
 sch_new_user = {
     'type': 'object',
     'properties': {
-        'email':        {'type': 'string'},
-        'password':     {'type': 'number'},
-        'phone':        {'type': 'string'},
-        'first_name':   {'type': 'string'},
-        'second_name':  {'type': 'string'},
-        'middle_name':  {'type': 'string'},
-        'gender_id':    {'type': 'number'},
-        'birthday':     {'type': 'string'},
-        'country_id':   {'type': 'number'},
-        'city_id':      {'type': 'number'},
-        'photo':        {'type': 'string'},
-        'verification': {'type': 'string'},
-        'private':      {'type': 'string'}
+        'email':        {
+            'type': 'string',
+            'pattern': '^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$'
+            },
+        'password':     {
+            'type': 'string',
+            'pattern': '^[0-9a-zA-Z]+$'
+            },
+        'phone':        {
+            'type': 'string',
+            'pattern': '^7-([0-9]){3}-([0-9]){3}-([0-9]){2}-([0-9]){2}$'
+            },
+        'first_name':   {
+            'type': 'string',
+            'pattern': '^[A-я-]+$'
+            },
+        'second_name':  {
+            'type': 'string',
+            'pattern': '^[A-я-]+$'
+            },
+        'middle_name':  {
+            'type': 'string',
+            'pattern': '^[A-я-]+$'
+            },
+        'gender_id':    {
+            'type': 'number',
+            'pattern': '^[0-9]+$'
+            },
+        'birthday':     {
+            'type': 'string',
+            'pattern': '^[0-9-]+$'
+            },
+        'country_id':   {
+            'type': 'number',
+            'pattern': '^[0-9]+$'
+            },
+        'city_id':      {
+            'type': 'number',
+            'pattern': '^[0-9]+$'
+            },
+        'photo':        {
+            'type': 'string',
+            'pattern': '^data:image\/([a-zA-Z]*);base64,([^\"]*)'
+            },
+        'verification': {
+            'type': 'string',
+            'pattern': '^(true|false)$'
+            },
+        'private':      {
+            'type': 'string',
+            'pattern': '^(true|false)$'
+            }
     },
-    'required': ['user_id', 'roles']
+    'required': ['email', 'password', 'phone', 'first_name', 'second_name', 'middle_name', 'gender_id', 'birthday', 'country_id', 'country_id', 'country_id', 'verification', 'photo', 'private']
 }
 
 sch_user_auth = {
     'type': 'object',
     'properties': {
-        'email': {'type': 'string'},
-        'phone': {'type': 'string'}
+        'email': {
+            'type': 'string',
+            'pattern': '^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$'
+            },
+        'phone': {
+            'type': 'string',
+            'pattern': '^7-([0-9]){3}-([0-9]){3}-([0-9]){2}-([0-9]){2}$'
+            }
     },
-    'required': ['user_id', 'roles']
+    'required': ['email', 'phone']
 }
 
 #user
