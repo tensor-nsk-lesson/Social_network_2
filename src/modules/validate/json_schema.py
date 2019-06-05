@@ -6,11 +6,20 @@ sch_new_group = {
     'properties': {
         'name': {
             'type': 'string',
-            'pattern': '[^A-Za-z0-9_]'
+            'pattern': '^[А-Яа-яA-Za-z0-9 ]+$'
             },
-        'topic': {'type': 'number'},
-        'photo': {'type': 'string'},
-        'desc': {'type' : 'string'}
+        'topic': {
+            'type': 'number',
+            'pattern': '^[0-9]+$'
+            },
+        'photo': {
+            'type': 'string',
+            'pattern': ''
+            },
+        'desc': {
+            'type' : 'string',
+            'pattern': '^[А-я\w \d\s\x00-\x1F\x7F\x20-\x7E]+$'
+            }
     },
     'required': ['name', 'topic', 'photo']
 }
@@ -19,8 +28,14 @@ sch_new_group = {
 sch_new_group_post = {
     'type': 'object',
     'properties': {
-        'content_id': {'type': 'number'},
-        'content': {'type': 'number'}
+        'content_id': {
+            'type': 'number',
+            'pattern': '^[0-9]+$'
+            },
+        'content': {
+            'type': 'number',
+            'pattern': '^[А-я\w \d\s\x00-\x1F\x7F\x20-\x7E]+$'
+            }
     },
     'required': ['content_id', 'content']
 }
@@ -29,8 +44,14 @@ sch_new_group_post = {
 sch_new_group_admin = {
     'type': 'object',
     'properties': {
-        'user_id': {'type': 'number'},
-        'roles': {'type': 'number'}
+        'user_id': {
+            'type': 'number',
+            'pattern': '^[0-9]+$'
+            },
+        'roles': {
+            'type': 'number',
+            'pattern': '^[0-9]+$'
+            }
     },
     'required': ['user_id', 'roles']
 }
