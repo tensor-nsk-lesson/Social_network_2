@@ -33,11 +33,15 @@ sch_new_group_post = {
             'pattern': '^[0-9]+$'
             },
         'content': {
-            'type': 'number',
+            'type': 'string',
             'pattern': '^[А-я\w \d\s\x00-\x1F\x7F\x20-\x7E]+$'
+            },
+        'group_id': {
+            'type': 'number',
+            'pattern': '^[0-9]+$'
             }
     },
-    'required': ['content_id', 'content']
+    'required': ['content_id', 'content', 'group_id']
 }
 
 
