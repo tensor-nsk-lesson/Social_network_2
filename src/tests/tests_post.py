@@ -73,9 +73,10 @@ class TestGetAPI(unittest.TestCase):
     def test_new_post_group(self):
         data = {
             "content_id": 1,
-            "content": 'второй самый популярный пост социалочки'
+            "content": 'второй самый популярный пост социалочки',
+            "group_id": 1
         }
-        resp = requests.post(url + '/post/group/2/post/new', json=data)
+        resp = requests.post(url + '/post/group/post/new', json=data)
         self.assertEqual(resp.status_code, 200)
         self.assertIsNotNone(resp.text)
 
