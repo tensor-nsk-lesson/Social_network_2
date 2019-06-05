@@ -15,7 +15,6 @@ DROP TABLE IF EXISTS"Gender" CASCADE;
 DROP TABLE IF EXISTS"Likes" CASCADE;
 DROP TABLE IF EXISTS"MContent" CASCADE;
 DROP TABLE IF EXISTS"Message" CASCADE;
-DROP TABLE IF EXISTS"PContent" CASCADE;
 DROP TABLE IF EXISTS"Post" CASCADE;
 DROP TABLE IF EXISTS"Roles" CASCADE;
 DROP TABLE IF EXISTS"Topics" CASCADE;
@@ -46,7 +45,7 @@ CREATE TABLE IF NOT EXISTS "City" (
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "CPosts" ( 
-	"comm_id" serial not null,
+	"comm_id" int not null,
 	"post_id" int not null
 ) WITHOUT OIDS;
 
@@ -103,17 +102,10 @@ CREATE TABLE IF NOT EXISTS "Message" (
 	PRIMARY KEY ("id")
 ) WITHOUT OIDS;
 
-CREATE TABLE IF NOT EXISTS "PContent" ( 
-	"id" serial not null,
-	"content" text not null,
-	PRIMARY KEY ("id")
-) WITHOUT OIDS;
-
 CREATE TABLE IF NOT EXISTS "Post" ( 
-	"id" serial not null,
-	"content_id" int not null,
-	"date_time" timestamp not null,
-	PRIMARY KEY ("id")
+	"id" int not null,
+	"content" text not null,
+	"date_time" timestamp default current_timestamp
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "Roles" ( 
