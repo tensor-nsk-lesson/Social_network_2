@@ -28,11 +28,14 @@ def create_group():
 		return db.post_create_group_new(data)
 
 
-@app.route('/post/group/<int:id>/post/new', methods=["POST"])  # Создание нового поста сообществом
-def create_group_post(id):
+@app.route('/post/group/post/new', methods=["POST"])  # Создание нового поста сообществом
+def create_group_post():
 	data = request.get_json()
-	db.post_group_post_new(id, data)
-	return 200
+	if va.valid(data, ch.sch_new_group_post):
+		db.post_group_post_new(data)
+		return 200
+	else: 
+		return 500
 
 @app.route('/post/group/<int:id>/administrators/new', methods=["POST"])  # Добавление нового администратора в группу
 def add_group_admin(id):
