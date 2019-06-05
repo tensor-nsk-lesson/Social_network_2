@@ -32,8 +32,7 @@ def create_group():
 def create_group_post():
 	data = request.get_json()
 	if va.valid(data, ch.sch_new_group_post):
-		db.post_group_post_new(data)
-		return 200
+		return db.post_group_post_new(data)
 	else: 
 		return 500
 
