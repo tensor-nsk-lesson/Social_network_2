@@ -4,6 +4,8 @@ from flask import request
 
 from modules.validate import json_schema as ch
 from modules.validate import json_validator as va
+
+
 @app.route('/get/groups', methods=["GET"]) # Выборка всех сообществ
 def get_groups():
     return db.get_groups()
