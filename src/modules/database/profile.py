@@ -1,5 +1,5 @@
 from . import db
- 
+import json
 
 def get_users():
 	sql = 'SELECT * FROM \"User\"'
@@ -17,7 +17,14 @@ def get_user_friends(id):
 
 #
 def post_profile_friends(data):
-    sql = 'UPDATE Friendlist f SET state_id = 1 WHERE f.user_id = ' +  data["user_id"] + ' AND friend_id = ' + data["friend_id"]
+    sql = '''SELECT * FROM \"Friendlist\" WHERE user_id = '%s' AND friend_id = '%s' OR user_id = '%s' AND friend_id = '%s' ''' % (data["user_id"], data["friend_id"], data["friend_id"], data["user_id"] )
+    db_data = json.loads(db.select(sql, False))
+    if db_data:
+        print('ssss') 
+        sql = '''UPDATE \"Friendlist\" f SET state_id = 1 WHERE f.user_id = '%d' AND f.friend_id = '%d' ''' % (db_data['user_id'], db_data['friend_id'])
+    else:
+        print('dddd') 
+        sql = '''INSERT INTO \"Friendlist\" (user_id, friend_id, state_id)  VALUES ('%d', '%d', '%d')''' % (data['user_id'], data['friend_id'], 1)
     return db.insert(sql, False)
 #
 

@@ -19,9 +19,9 @@ def get_all_friends(id):
     return db.get_user_friends(id)
 
 
-@app.route('/user/<int:id>/friends', methods=["POST", "PUT"])
-def edit_friends(id):  
-  data = request.json()
+@app.route('/user/friends', methods=["POST", "PUT"])
+def edit_friends():  
+  data = request.get_json()
   if request.method == 'POST':
     return db.post_profile_friends(data)
 

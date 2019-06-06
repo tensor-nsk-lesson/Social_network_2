@@ -39,7 +39,6 @@ def select(query, fetch):
 		return jsonify(ans), 200
 
 
-
 def insert(query, fetch):
 	conn = connect_sql()
 	try:
