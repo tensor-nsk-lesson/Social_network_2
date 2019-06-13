@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+}
+.main__leftside{
+    width: 100px;
+    height: 100vh;
+    background: #326ca2;
+}
+
+.main__rightside{
+    margin-top: 50px;
+    margin-left: 50px;
+}
