@@ -1,5 +1,5 @@
 import React from 'react';
-import PostsInput from "./postsInput";
+import Input from "./input";
 import PostItem from "./postItem";
 
 class Posts extends React.Component {

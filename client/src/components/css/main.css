@@ -2,12 +2,15 @@
     display: flex;
 }
 .main__leftside{
+    position: fixed;
     width: 100px;
     height: 100vh;
     background: #326ca2;
 }
 
 .main__rightside{
+    width: calc(100vw - 100px);
+    height: 100%;
     margin-top: 50px;
     margin-left: 50px;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import Photos from './photos';
 import Statistics from './statistics'
 import '../css/profile.css';
-import PostsInput from "./postsInput";
+import Input from "./input";
 import Posts from "./posts";
 import ProfileHeader from "./profileHeader";
 
@@ -18,7 +18,7 @@ class Profile extends React.Component{
                     <hr/>
                     <Photos />
                     <Statistics />
-                    <PostsInput />
+                    <Input placeholder="Как прошел Ваш день?"/>
                     <Posts />
                 </div>
             </div>

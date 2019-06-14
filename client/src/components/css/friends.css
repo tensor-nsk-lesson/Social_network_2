@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+}
+
+
+.main__friend{
+    display: flex;
+}
+.main__friend
+.main__friend{
+    margin-top: 25px;
+}
+
+.main__friend__img, .main__friend__img img{
+    width: 70px;
+    height: 70px;
+    background: #000;
+}
+
+.main__friend__action{
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+}
+
+.main__friend__info{
+    margin-left: 10px;
+}
+.main__friend__info a{
+    color: #1977a2;
+}
+
+.main__friends{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main__friend__deleteFriend, .main__friend__addFriend{
+    margin-left: 200px;
+    border: none;
+    background: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main__friend__deleteFriend {
+    color: #a21b19;
+}
+
+.main__friend__addFriend{
+    color: #1977a2;
+}
+
+.main__friend__info__header{
+    font-size: 24px;
+}
+
+.main__friend__info__writeBtn{
+    background: #fff;
+    font-size: 20px;
+    border: none;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Input from "./input";
 
 class PostItem extends React.Component{
     constructor(props) {

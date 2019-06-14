@@ -10,11 +10,6 @@ html{
 a{
     text-decoration: none;
 }
-.main__leftside{
-    width: 100px;
-    height: 100vh;
-    background: #326ca2;
-}
 
 .main__leftside__nav{
     height: 90%;
@@ -26,14 +21,4 @@ a{
 
 .main__leftside__nav-img{
     height: 25px;
-}
-
-.okok{
-    background: #000;
-    width: 500px;
-}
-
-.app-wrapper-content{
-    margin-left: 500px;
-    background: #000;
 }

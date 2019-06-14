@@ -1,5 +1,6 @@
 .main__profile{
     display: flex;
+    justify-content: center;
 }
 .main__photo-user_img{
     width: 200px;
