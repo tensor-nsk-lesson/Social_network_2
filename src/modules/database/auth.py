@@ -1,9 +1,9 @@
-import hashlib
+#import hashlib
 
 from . import db
 
 def hash_pass(password):
-    return hashlib.sha512(password.encode('utf-8')).hexdigest()
+    #return hashlib.sha512(password.encode('utf-8')).hexdigest()
 
 
 def post_user_new(data):
