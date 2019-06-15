@@ -2,5 +2,3 @@ flask
 psycopg2
 redis
 python_socketio
-
-json
