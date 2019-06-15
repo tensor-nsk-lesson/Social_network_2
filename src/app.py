@@ -7,4 +7,4 @@ from modules.routes import *
 
 
 if __name__ == '__main__':
-    app.run(host='', debug=True, port=8450) 
+    app.run(host='', debug=True, port=80) 
