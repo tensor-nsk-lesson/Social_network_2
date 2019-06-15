@@ -4,6 +4,7 @@ from . import db
 
 def hash_pass(password):
     #return hashlib.sha512(password.encode('utf-8')).hexdigest()
+    return password
 
 
 def post_user_new(data):
