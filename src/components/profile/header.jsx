@@ -1,6 +1,6 @@
 import React from "react";
 
-class ProfileHeader extends React.Component{
+class Header extends React.Component{
     constructor(props){
         super(props);
         this.name = props.name;
@@ -8,7 +8,7 @@ class ProfileHeader extends React.Component{
     }
     render(){
         return(
-            <div className="main__profile-information__header">
+            <div className="profile__info__header">
                 <h1>
                     {/*<span>М</span>ария <span>З</span>айцева*/}
                     {this.name}
@@ -19,4 +19,4 @@ class ProfileHeader extends React.Component{
     }
 }
 
-export default ProfileHeader;
+export default Header;

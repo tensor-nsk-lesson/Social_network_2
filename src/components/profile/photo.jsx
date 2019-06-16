@@ -7,7 +7,7 @@ class Photo extends React.Component {
     }
     render() {
         return (
-            <img className="main__profile-information__photos__img" src={this.img}/>
+            <img className="profile__info__photos__img" src={this.img}/>
         );
     }
 }

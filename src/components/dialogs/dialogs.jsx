@@ -1,18 +1,22 @@
 import React from 'react';
-import '../css/dialogs.css'
-import Friend from "../friends/friend";
+import './dialogs.css'
+import Post from "../profile/post";
+import ContentInput from "../profile/contentInput";
+import Dialog from "./dialog";
+import Messages from "./messages";
 
 class Dialogs extends React.Component{
     render(){
         return(
-            <div className="dialog">
-                <h1>Диалог с Владом Никитиным</h1>
-                <div className="dialog__items">
-                    <div className="dialog__items__list">
-                    </div>
-                    <div className="dialog__items__messages">
-
-                    </div>
+            <div className="dialogs">
+                <div className="listOfDialogs">
+                    <h2>Друзья</h2>
+                    <Dialog name="Мария Ким" status="Онлайн"/>
+                </div>
+                <div className="dialog">
+                    <h2>Диалог</h2>
+                    <Messages />
+                    <ContentInput placeholder="Введите сообщение..."/>
                 </div>
             </div>
         );

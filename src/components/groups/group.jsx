@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/groups.css'
+import './groups.css'
 
 class Group extends React.Component{
     constructor(props){
@@ -11,17 +11,17 @@ class Group extends React.Component{
     }
     render(){
         return(
-            <div className="main__group">
-                <div className="main__group__img">
+            <div className="group">
+                <div className="group__img">
                     <img src={this.img} alt=""/>
                 </div>
-                <div className="main__group__info">
-                    <a class="main__group__info__link" href="">
-                        <h3 class="main__group__info__title">{this.title}</h3>
+                <div className="group__info">
+                    <a class="group__info__link" href="">
+                        <h3 class="group__info__title">{this.title}</h3>
                     </a>
-                    <h5 class="main__group__info__desc">{this.desc}</h5>
+                    <h5 class="group__info__desc">{this.desc}</h5>
                 </div>
-                <button className="main__group__action">
+                <button className="group__action">
                     {this.state}
                 </button>
             </div>

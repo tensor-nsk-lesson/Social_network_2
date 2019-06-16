@@ -1,24 +1,24 @@
 import React from 'react';
 import Photos from './photos';
 import Statistics from './statistics'
-import '../css/profile.css';
-import Input from "./input";
+import './profile.css';
+import ContentInput from "./contentInput";
 import Posts from "./posts";
-import ProfileHeader from "./profileHeader";
+import Header from "./header";
 
 class Profile extends React.Component{
     render(){
         return(
-            <div class="main__profile">
-                <div class="main__photo-user">
-                    <img class="main__photo-user_img" src="img/profile-images/photo.jpg"/>
+            <div class="profile">
+                <div class="profile__photo">
+                    <img class="profile__photo__img" src="img/profile-images/photo.jpg"/>
                 </div>
-                <div class="main__profile-information">
-                    <ProfileHeader name="Мария Зайцева" status="онлайн"/>
+                <div class="profile__info">
+                    <Header name="Мария Зайцева" status="онлайн"/>
                     <hr/>
                     <Photos />
                     <Statistics />
-                    <Input placeholder="Как прошел Ваш день?"/>
+                    <ContentInput placeholder="Как прошел Ваш день?"/>
                     <Posts />
                 </div>
             </div>

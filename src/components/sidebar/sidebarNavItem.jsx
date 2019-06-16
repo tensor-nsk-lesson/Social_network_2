@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import '../css/sidebar.css'
+import './sidebar.css'
 
 class SidebarNavItem extends React.Component {
     constructor(props){
@@ -10,8 +10,8 @@ class SidebarNavItem extends React.Component {
     }
     render() {
         return (
-            <NavLink className="main__leftside__nav-link" to={this.url}>
-                <img className="main__leftside__nav-img" src={this.img} alt=""/>
+            <NavLink className="main__navbar__items__navlink" to={this.url}>
+                <img className="main__navbar__items__img" src={this.img} alt=""/>
             </NavLink>
         );
     }

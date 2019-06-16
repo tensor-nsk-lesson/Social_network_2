@@ -1,0 +1,18 @@
+.dialogs{
+    display: flex;
+    justify-content: center;
+}
+
+.listOfDialogs{
+    padding-right: 100px;
+}
+
+.messages{
+    height: 500px;
+    width: 600px;
+    overflow: auto;
+}
+
+h2{
+    text-align: center;
+}

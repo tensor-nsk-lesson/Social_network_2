@@ -4,7 +4,7 @@ import Photo from "./photo";
 class Photos extends React.Component{
     render(){
         return(
-            <div className="main__profile-information__photos">
+            <div className="profile__info__photos">
                 {/*
                 * img={require('img/profile-images/p1.jpg')}
                 */}

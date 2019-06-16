@@ -2,7 +2,6 @@ import React from 'react';
 import Sidebar from './components/sidebar/sidebar';
 import Profile from './components/profile/profile';
 import { Route, BrowserRouter } from 'react-router-dom';
-import './components/css/main.css'
 import Friends from "./components/friends/friends";
 import Groups from "./components/groups/groups";
 import Dialogs from "./components/dialogs/dialogs";
@@ -13,7 +12,7 @@ function App() {
     <BrowserRouter>
       <div className="main">
         <Sidebar />
-        <div className="main__rightside">
+        <div className="main__content">
           <Route path="/profile" component={Profile} />
           <Route path="/friends" component={Friends} />
           <Route path="/dialogs" component={Dialogs} />

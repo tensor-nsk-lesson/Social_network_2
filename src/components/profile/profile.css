@@ -1,13 +1,14 @@
-.main__profile{
+.profile{
     display: flex;
     justify-content: center;
 }
-.main__photo-user_img{
+
+.profile__photo{
     width: 200px;
     height: 300px;
 }
 
-.main__profile-information{
+.profile__info{
     margin-left: 30px;
     margin-top: 35px;
 }
@@ -15,21 +16,21 @@
 span{
     color: #5698b7;
 }
-.main__profile-information__photos{
+.profile__info__photos{
     margin-top: 25px;
 }
 
-.main__profile-information__photos__img{
+.profile__info__photos__img{
     width: 120px;
     height: 100px;
 }
 
-.main__profile-information__photos__img~
-.main__profile-information__photos__img{
+.profile__info__photos__img~
+.profile__info__photos__img{
     margin-left: 10px;
 }
 
-.main__profile-information__statistics{
+.profile_info_stat{
     display: flex;
     text-align: center;
     margin-top: 20px;
@@ -40,35 +41,35 @@ h2{
     margin-left: 20px;
 }
 
-.main__profile-information__header{
+.profile__info__header{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.main__profile-information__header > h3{
+.profile__info__header > h3{
     color: #5698b7;
 }
 
-.main__profile-posts__input{
+.content__input{
     margin-top: 20px;
     padding: 8px 10px;
     width: 100%;
     border: 1px solid #5698b7;
 }
 
-.main__profile-post__user{
+.profile__post__user{
     display: flex;
     align-items: center;
 }
 
-.main__profile-post{
+.profile__post{
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.main__profile-post__user__information{
+.profile__post__userinfo{
     margin-left: 10px;
 }

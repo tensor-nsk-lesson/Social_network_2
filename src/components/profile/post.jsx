@@ -1,25 +1,25 @@
 import React from 'react';
-import Input from "./input";
 
-class PostItem extends React.Component{
+class Post extends React.Component{
     constructor(props) {
         super(props);
         this.photo = props.photo;
         this.name = props.name;
         this.content = props.content;
         this.datetime = props.datetime;
+        this.url = props.url;
     }
     render(){
         return(
-            <div className="main__profile-post">
-                <div className="main__profile-post__user">
+            <div className="profile__post">
+                <div className="profile__post__user">
                     <img src="img/profile-images/post1.jpg" alt=""/>
-                    <div className="main__profile-post__user__information">
-                        <h3>
+                    <div className="profile__post__userinfo">
+                        <a className="profile__post__username" href="#">
                             {/*<span>М</span>ария <span>З</span>айцева*/}
                             {this.name}
-                        </h3>
-                        <h5>{this.content}</h5>
+                        </a>
+                        <p>{this.content}</p>
                     </div>
                 </div>
                 <h5>{this.datetime}</h5>
@@ -28,4 +28,4 @@ class PostItem extends React.Component{
     }
 }
 
-export default PostItem;
+export default Post;

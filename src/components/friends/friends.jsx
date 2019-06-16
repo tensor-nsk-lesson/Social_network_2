@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/friends.css'
+import './friends.css'
 import Friend from "./friend";
 
 class Friends extends React.Component {
@@ -7,7 +7,7 @@ class Friends extends React.Component {
         return (
             <div>
                 <h1>Друзья</h1>
-                <div className="main__friends">
+                <div className="friends">
                     <Friend isFriend="1" name="Влад Никитин"/>
                 </div>
             </div>

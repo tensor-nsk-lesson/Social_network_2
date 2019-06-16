@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/groups.css'
+import './groups.css'
 import Group from "./group";
 
 class Groups extends React.Component{
@@ -7,7 +7,7 @@ class Groups extends React.Component{
         return(
             <div>
                 <h1>Группы</h1>
-                <div className="main__groups">
+                <div className="groups">
                     <Group title="Социалочка - Блог разработчиков" desc="Официальная группа соц. сети Социалочка"
                            state='Отписаться'/>
                 </div>

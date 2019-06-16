@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/friends.css'
+import './friends.css'
 
 class Friend extends React.Component{
     constructor(props){
@@ -10,22 +10,22 @@ class Friend extends React.Component{
     }
     render(){
         return(
-            <div className="main__friend">
-                <div className="main__friend__img">
+            <div className="friend">
+                <div className="friend__img">
                     <img src={this.img} alt=""/>
                 </div>
-                <div className="main__friend__info">
-                    <a className="main__friend__info__link" href="">
-                        <h3 className="main__friend__info__header">{this.name}</h3>
+                <div className="friend__info">
+                    <a className="friend__info__link" href="">
+                        <h3 className="friend__info__header">{this.name}</h3>
                     </a>
-                    <button className="main__friend__info__writeBtn">Написать сообщение</button>
+                    <button className="friend__info__write">Написать сообщение</button>
                 </div>
                 { this.isFriend == 1 ? (
-                    <button className="main__friend__deleteFriend">
+                    <button className="friend__delete">
                         Удалить из друзей
                     </button>
                     ) : (
-                        <button className="main__friend__addFriend">
+                        <button className="friend__add">
                             Добавить в друзья
                         </button>
                     )
