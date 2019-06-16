@@ -4,14 +4,14 @@ class StatisticsItem extends React.Component{
     constructor(props){
         super(props);
         this.count = props.count;
-        this.name = props.name;
+        this.title = props.title;
     }
     render(){
         return(
             <h2>
                 <span>{this.count}</span>
                 <br/>
-                {this.name}
+                {this.title}
             </h2>
         );
     }

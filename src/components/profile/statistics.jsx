@@ -1,17 +1,21 @@
 import React from 'react';
 import StatisticsItem from "./statisticsItem";
+import {connect} from "react-redux";
 
 class Statistics extends React.Component{
     render(){
-        return(
-            <div className="profile_info_stat">
-                <StatisticsItem count="24" name="друга"/>
-                <StatisticsItem count="12" name="фотографий"/>
-                <StatisticsItem count="1" name="пост"/>
-                <StatisticsItem count="33" name="подписки"/>
-            </div>
-        );
+        let statisticsItems = [];
+        for (let i = 0; i < this.props.statistics.length; i++) {
+            statisticsItems.push(<StatisticsItem count={this.props.statistics[i].count} title={this.props.statistics[i].title} />);
+        }
+        return <div className="profile_info_stat">{statisticsItems}</div>;
     }
 }
 
-export default Statistics;
+const putStateToProps = store => {
+    return {
+        statistics: store.statistics
+    }
+}
+
+export default connect(putStateToProps)(Statistics)

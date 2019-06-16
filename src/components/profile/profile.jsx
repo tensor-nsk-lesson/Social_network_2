@@ -5,6 +5,7 @@ import './profile.css';
 import ContentInput from "./contentInput";
 import Posts from "./posts";
 import Header from "./header";
+import {connect} from "react-redux";
 
 class Profile extends React.Component{
     render(){
@@ -14,7 +15,7 @@ class Profile extends React.Component{
                     <img class="profile__photo__img" src="img/profile-images/photo.jpg"/>
                 </div>
                 <div class="profile__info">
-                    <Header name="Мария Зайцева" status="онлайн"/>
+                    <Header name={this.props.username} status={this.props.status}/>
                     <hr/>
                     <Photos />
                     <Statistics />
@@ -26,4 +27,11 @@ class Profile extends React.Component{
     }
 }
 
-export default Profile;
+const putStateToProps = store => {
+    return {
+        username: store.username,
+        status: store.status
+    }
+};
+
+export default connect(putStateToProps)(Profile)
