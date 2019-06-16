@@ -7,6 +7,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 export const initialState = {
+    isAuth: 0,
     username: 'Имя Фамилия',
     status: 'статус',
     statistics: [

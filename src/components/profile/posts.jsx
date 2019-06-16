@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Post from "./post";
-import StatisticsItem from "./statisticsItem";
 
 class Posts extends React.Component {
     render(){

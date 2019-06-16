@@ -1,6 +1,5 @@
 import React from 'react';
 import './dialogs.css'
-import Post from "../profile/post";
 import ContentInput from "../profile/contentInput";
 import Dialog from "./dialog";
 import Messages from "./messages";

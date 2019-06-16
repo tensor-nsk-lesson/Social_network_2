@@ -1,7 +1,6 @@
 import React from 'react';
 import Photo from "./photo";
 import {connect} from "react-redux";
-import StatisticsItem from "./statisticsItem";
 
 class Photos extends React.Component{
     render(){
