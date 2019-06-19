@@ -9,18 +9,6 @@ class PhotosContainer extends React.Component{
             photos.push(<Photo url={this.props.photos[i].url}/>);
         }
         return <div className="profile__info__photos">{photos}</div>;
-        return(
-            <div className="profile__info__photos">
-                {/*
-                * img={require('img/profile-images/p1.jpg')}
-                */}
-                <Photo />
-                <Photo />
-                <Photo />
-                <Photo />
-                <Photo />
-            </div>
-        );
     }
 }
 

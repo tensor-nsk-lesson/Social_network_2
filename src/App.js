@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import Sidebar from './components/sidebar/sidebar';
-import Friends from "./components/friends/friends";
-import Groups from "./components/groups/groups";
+import Friends from "./containers/FriendsContainer";
+import GroupsContainer from "./containers/GroupsContainer";
 import Dialogs from "./components/dialogs/dialogs";
 import Search from "./components/search/search";
 import Register from "./components/register";
@@ -36,7 +36,7 @@ class App extends React.Component {
                         <Route path="/profile" component={ProfileContainer} />
                         <Route path="/friends" component={Friends} />
                         <Route path="/dialogs" component={Dialogs} />
-                        <Route path="/groups" component={Groups} />
+                        <Route path="/groups" component={GroupsContainer} />
                         <Route path="/search" component={Search} />
                     </div>
                 </div>

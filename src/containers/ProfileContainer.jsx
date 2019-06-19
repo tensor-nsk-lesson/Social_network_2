@@ -6,7 +6,7 @@ import Posts from "./PostsContainer";
 import Header from "../components/profile/header";
 import {connect} from "react-redux";
 import '../components/profile/profile.css';
-import {setFirstName} from "../actions/setFirstName";
+import {setFirstName} from "../actions/profileActions";
 
 class ProfileContainer extends React.Component{
     constructor(props){
@@ -35,7 +35,7 @@ const mapStateToProps = state => {
     return {
         firstName: state.profile.firstName,
         secondName: state.profile.secondName,
-        isOnline: state.isOnline,
+        isOnline: state.profile.isOnline,
     }
 };
 

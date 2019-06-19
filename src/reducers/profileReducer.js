@@ -1,8 +1,6 @@
-import {SET_FIRST_NAME, SET_SECOND_NAME} from "../actions/setFirstName";
-import {initialState} from "../index";
+import {SET_FIRST_NAME, SET_ONLINE_STATUS, SET_SECOND_NAME} from "../actions/profileActions";
 
 const defaultState = {
-    isAuth: 1,
     firstName: 'Имя',
     secondName: 'Фамилия',
     isOnline: 'онлайн',
@@ -47,6 +45,21 @@ const defaultState = {
         {
             url: 'url'
         }
+    ],
+    friends: [
+        {
+            name: 'Антон Чусовитин'
+        },
+        {
+            name: 'Яна Казанина'
+        },
+
+    ],
+    groups: [
+        {
+            title: 'Тензор',
+            desc: 'Лучшая компания в мире',
+        }
     ]
 };
 
@@ -61,7 +74,12 @@ export const profileReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 secondName: action.payload
-            }
+            };
+        case SET_ONLINE_STATUS:
+            return {
+                ...state,
+                secondName: action.payload
+            };
     }
     return state
 }

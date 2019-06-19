@@ -12,10 +12,10 @@ class PostsContainer extends React.Component {
     }
 }
 
-const putStateToProps = store => {
+const mapStateToProps = store => {
     return {
         posts: store.profile.posts
     }
 };
 
-export default connect(putStateToProps)(PostsContainer);
+export default connect(mapStateToProps)(PostsContainer);
