@@ -1,13 +1,14 @@
 import React from 'react';
 import './sidebar.css'
 import SidebarNavItem from "./sidebarNavItem";
+import {connect} from "react-redux";
 
 class Sidebar extends React.Component {
     render() {
         return (
             <div className="main__navbar">
                 <div className="main__navbar__items">
-                    <SidebarNavItem url="/" img={require("../../img/profile.png")}/>
+                    <SidebarNavItem url="/profile" img={require("../../img/profile.png")}/>
                     <SidebarNavItem url="/friends" img={require("../../img/friends.png")}/>
                     <SidebarNavItem url="/dialogs" img={require("../../img/messages.png")}/>
                     <SidebarNavItem url="/groups" img={require("../../img/groups.png")}/>

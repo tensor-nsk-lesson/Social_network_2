@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
-import Post from "./post";
+import Post from "../components/profile/post";
 
-class Posts extends React.Component {
+class PostsContainer extends React.Component {
     render(){
         let posts = [];
         for (let i = 0; i < this.props.posts.length; i++) {
@@ -14,8 +14,8 @@ class Posts extends React.Component {
 
 const putStateToProps = store => {
     return {
-        posts: store.posts
+        posts: store.profile.posts
     }
-}
+};
 
-export default connect(putStateToProps)(Posts);
+export default connect(putStateToProps)(PostsContainer);

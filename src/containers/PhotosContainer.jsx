@@ -1,8 +1,8 @@
 import React from 'react';
-import Photo from "./photo";
+import Photo from "../components/profile/photo";
 import {connect} from "react-redux";
 
-class Photos extends React.Component{
+class PhotosContainer extends React.Component{
     render(){
         let photos = [];
         for (let i = 0; i < this.props.photos.length; i++) {
@@ -26,8 +26,8 @@ class Photos extends React.Component{
 
 const putStateToProps = store => {
     return {
-        photos: store.photos
+        photos: store.profile.photos
     }
 }
 
-export default connect(putStateToProps)(Photos);
+export default connect(putStateToProps)(PhotosContainer);

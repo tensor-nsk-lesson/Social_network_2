@@ -4,7 +4,7 @@ class Header extends React.Component{
     constructor(props){
         super(props);
         this.name = props.name;
-        this.status = props.status;
+        this.isOnline = props.isOnline;
     }
     render(){
         return(
@@ -13,7 +13,7 @@ class Header extends React.Component{
                     {/*<span>М</span>ария <span>З</span>айцева*/}
                     {this.name}
                 </h1>
-                <h3>{this.status}</h3>
+                <h3>{this.isOnline}</h3>
             </div>
         );
     }

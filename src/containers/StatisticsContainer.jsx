@@ -1,8 +1,8 @@
 import React from 'react';
-import StatisticsItem from "./statisticsItem";
+import StatisticsItem from "../components/profile/statisticsItem";
 import {connect} from "react-redux";
 
-class Statistics extends React.Component{
+class StatisticsContainer extends React.Component{
     render(){
         let statisticsItems = [];
         for (let i = 0; i < this.props.statistics.length; i++) {
@@ -12,10 +12,10 @@ class Statistics extends React.Component{
     }
 }
 
-const putStateToProps = store => {
+const mapStateToProps = store => {
     return {
-        statistics: store.statistics
+        statistics: store.profile.statistics
     }
-}
+};
 
-export default connect(putStateToProps)(Statistics)
+export default connect(mapStateToProps)(StatisticsContainer)
