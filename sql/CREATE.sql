@@ -140,10 +140,9 @@ CREATE TABLE IF NOT EXISTS "Photo" (
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "Post" ( 
-	"id" serial not null,
-	"content_id" int not null,
-	"date_time" timestamp not null,
-	PRIMARY KEY ("id")
+	"id" int not null,
+	"content" int not null,
+	"date_time" timestamp default current_timestamp
 ) WITHOUT OIDS;
 
 CREATE TABLE IF NOT EXISTS "Roles" ( 
