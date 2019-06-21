@@ -11,8 +11,8 @@ class Search extends React.Component{
                 <div className="search__input">
                     <ContentInput placeholder="Кого будем искать?"/>
                 </div>
-                <Friend isFriend="1" name="Влад Никитин"/>
-                <Friend isFriend="0" name="Мария Ким"/>
+                <Friend isFriend="1" name="Павел Облаков"/>
+                <Friend isFriend="0" name="Алексей Грицанов"/>
             </div>
         );
     }

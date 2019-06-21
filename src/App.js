@@ -5,11 +5,12 @@ import FriendsContainer from "./containers/FriendsContainer";
 import GroupsContainer from "./containers/GroupsContainer";
 import DialogsContainer from "./components/dialogs/Dialogs";
 import Search from "./components/search/Search";
-import Register from "./components/Register";
+import Register from "./containers/RegisterContainer";
 import {connect} from "react-redux";
 import {Redirect} from 'react-router';
 import ProfileContainer from "./containers/ProfileContainer";
-import {RegisterForm} from "./components/RegisterForm";
+import {RegisterContainer} from "./containers/RegisterContainer";
+import Settings from "./components/settings/settings";
 
 class App extends React.Component {
     render() {
@@ -33,6 +34,7 @@ class App extends React.Component {
                         <Route path="/friends" component={FriendsContainer}/>
                         <Route path="/dialogs" component={DialogsContainer}/>
                         <Route path="/groups" component={GroupsContainer}/>
+                        <Route path="/settings" component={Settings}/>
                         <Route path="/search" component={Search}/>
                     </div>
                 </div>

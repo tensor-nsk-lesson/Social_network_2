@@ -1,0 +1,18 @@
+.settings__profile__data{
+    display: flex;
+    align-items: baseline;
+}
+
+.settings__profile{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.settings__profile__data p{
+    margin-right: 30px;
+}
+
+hr{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}

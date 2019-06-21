@@ -10,7 +10,7 @@ class GroupsContainer extends React.Component{
             groups.push(<Group title={this.props.groups[i].title} desc={this.props.groups[i].desc}
                               state='Отписаться'/>);
         }
-        return <div className="groups">{groups}</div>;
+        return <div className="groups"><h1>Группы</h1>{groups}</div>;
     }
 }
 const mapStateToProps = store => {

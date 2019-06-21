@@ -5,6 +5,7 @@ const defaultState = {
     secondName: '',
     email: '',
     isOnline: 'онлайн',
+    password: '',
     statistics: [
         {
             count: 'кол-во',
@@ -88,4 +89,4 @@ export const profileReducer = (state = defaultState, action) => {
             };
     }
     return state
-}
+};

@@ -9,7 +9,7 @@ class FriendsContainer extends React.Component {
         for (let i = 0; i < this.props.friends.length; i++) {
             friends.push(<Friend isFriend="1" name={this.props.friends[i].name}/>);
         }
-        return <div className="friends">{friends}</div>;
+        return <div className="friends"><h1>Друзья</h1>{friends}</div>;
     }
 }
 

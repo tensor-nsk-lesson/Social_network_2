@@ -1,11 +1,11 @@
 import React from 'react';
-import './register.css'
-import {LoginForm} from "./LoginForm";
+import '../components/auth/register.css'
+import {LoginForm} from "../components/auth/LoginForm";
 import {setEmail, setFirstName, setPassword, setSecondName} from "../actions/profileActions";
 import {connect} from "react-redux";
-import RegisterForm from "./RegisterForm";
+import RegisterForm from "../components/auth/RegisterForm";
 
-class Register extends React.Component {
+class RegisterContainer extends React.Component {
     render() {
         return (
             <div className="main">
@@ -75,4 +75,4 @@ const mapDispatchToProps = {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Register);
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterContainer);
