@@ -73,3 +73,7 @@ h2{
 .profile__post__userinfo{
     margin-left: 10px;
 }
+
+.main{
+    display: flex;
+}

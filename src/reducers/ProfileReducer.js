@@ -1,8 +1,9 @@
-import {SET_FIRST_NAME, SET_ONLINE_STATUS, SET_SECOND_NAME} from "../actions/profileActions";
+import {SET_EMAIL, SET_FIRST_NAME, SET_PASSWORD, SET_SECOND_NAME} from "../actions/profileActions";
 
 const defaultState = {
-    firstName: 'Имя',
-    secondName: 'Фамилия',
+    firstName: '',
+    secondName: '',
+    email: '',
     isOnline: 'онлайн',
     statistics: [
         {
@@ -75,10 +76,15 @@ export const profileReducer = (state = defaultState, action) => {
                 ...state,
                 secondName: action.payload
             };
-        case SET_ONLINE_STATUS:
+        case SET_EMAIL:
             return {
                 ...state,
-                secondName: action.payload
+                email: action.payload
+            };
+        case SET_PASSWORD:
+            return {
+                ...state,
+                password: action.payload
             };
     }
     return state

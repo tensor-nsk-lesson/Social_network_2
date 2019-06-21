@@ -1,6 +1,6 @@
 import React from 'react';
 import './sidebar.css'
-import SidebarNavItem from "./sidebarNavItem";
+import SidebarNavItem from "./SidebarNavItem";
 import {connect} from "react-redux";
 
 class Sidebar extends React.Component {

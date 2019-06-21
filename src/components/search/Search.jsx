@@ -1,7 +1,7 @@
 import React from 'react';
-import ContentInput from "../profile/contentInput";
+import ContentInput from "../profile/ContentInput";
 import './search.css'
-import Friend from "../friends/friend";
+import Friend from "../friends/Friend";
 
 class Search extends React.Component{
     render(){

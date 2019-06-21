@@ -1,6 +1,6 @@
 import React from 'react';
 import '../components/groups/groups.css'
-import Group from "../components/groups/group";
+import Group from "../components/groups/Group";
 import {connect} from "react-redux";
 
 class GroupsContainer extends React.Component{

@@ -1,17 +1,14 @@
 import React from 'react';
 import Photos from './PhotosContainer';
 import Statistics from './StatisticsContainer'
-import ContentInput from "../components/profile/contentInput";
+import ContentInput from "../components/profile/ContentInput";
 import Posts from "./PostsContainer";
-import Header from "../components/profile/header";
+import Header from "../components/profile/Header";
 import {connect} from "react-redux";
 import '../components/profile/profile.css';
 import {setFirstName} from "../actions/profileActions";
 
 class ProfileContainer extends React.Component{
-    constructor(props){
-        super(props);
-    }
     render(){
         return(
             <div className="profile">
@@ -39,9 +36,5 @@ const mapStateToProps = state => {
     }
 };
 
-const mapDispatchToProps = {
-    setFirstName: setFirstName
-};
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(ProfileContainer);
+export default connect(mapStateToProps)(ProfileContainer);

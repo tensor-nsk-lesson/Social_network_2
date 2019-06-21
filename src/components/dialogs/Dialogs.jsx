@@ -1,8 +1,8 @@
 import React from 'react';
 import './dialogs.css'
-import ContentInput from "../profile/contentInput";
-import Dialog from "./dialog";
-import Messages from "./messages";
+import ContentInput from "../profile/ContentInput";
+import Dialog from "./Dialog";
+import Messages from "./Messages";
 
 class Dialogs extends React.Component{
     render(){

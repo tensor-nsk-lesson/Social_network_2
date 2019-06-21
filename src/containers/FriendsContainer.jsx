@@ -1,6 +1,6 @@
 import React from 'react'
 import '../components/friends/friends.css'
-import Friend from "../components/friends/friend";
+import Friend from "../components/friends/Friend";
 import {connect} from "react-redux";
 
 class FriendsContainer extends React.Component {

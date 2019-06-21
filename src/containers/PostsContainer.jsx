@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from "react-redux";
-import Post from "../components/profile/post";
+import Post from "../components/profile/Post";
 
 class PostsContainer extends React.Component {
     render(){
@@ -12,9 +12,9 @@ class PostsContainer extends React.Component {
     }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = state => {
     return {
-        posts: store.profile.posts
+        posts: state.profile.posts
     }
 };
 

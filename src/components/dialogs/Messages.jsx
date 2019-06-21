@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from "../profile/post";
+import Post from "../profile/Post";
 
 export default class Messages extends React.Component{
     render(){

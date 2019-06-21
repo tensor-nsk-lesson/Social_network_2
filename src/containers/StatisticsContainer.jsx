@@ -1,5 +1,5 @@
 import React from 'react';
-import StatisticsItem from "../components/profile/statisticsItem";
+import StatisticsItem from "../components/profile/StatisticsItem";
 import {connect} from "react-redux";
 
 class StatisticsContainer extends React.Component{
