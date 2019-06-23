@@ -3,8 +3,9 @@ import './settings.css'
 import ContentInput from "../profile/ContentInput";
 import {connect} from "react-redux";
 import {setEmail, setFirstName, setPassword, setSecondName} from "../../actions/profileActions";
+import SettingsItem from "./SettingsItem";
 
-class Settings extends React.Component {
+class SettingsContainer extends React.Component {
     constructor(props) {
         super(props);
         this.setFirstNameMethod = this.setFirstNameMethod.bind(this);
@@ -44,32 +45,14 @@ class Settings extends React.Component {
             <div className="settings">
                 <h1>Настройки</h1>
                 <div className="settings__profile">
-                    <div onChange={this.setFirstNameMethod} className="settings__profile__data">
-                        <p>Имя:</p>
-                        <ContentInput value={this.props.firstName}/>
-                    </div>
-                    <div onChange={this.setSecondNameMethod} className="settings__profile__data">
-                        <p>Фамилия:</p>
-                        <ContentInput value={this.props.secondName}/>
-                    </div>
+                    <SettingsItem onChangeMethod={this.setFirstNameMethod} title="Имя" value={this.props.profile.firstName}/>
+                    <SettingsItem onChangeMethod={this.setSecondNameMethod} title="Фамилия" value={this.props.profile.secondName}/>
                     <hr/>
-                    <div onChange={this.setEmailMethod} className="settings__profile__data">
-                        <p>Эл. почта:</p>
-                        <ContentInput value={this.props.email}/>
-                    </div>
+                    <SettingsItem onChangeMethod={this.setEmailMethod} title="Эл. почта" value={this.props.profile.email}/>
                     <hr/>
-                    <div onChange={this.oldPasswordCheck} className="settings__profile__data">
-                        <p>Старый пароль:</p>
-                        <ContentInput type="password"/>
-                    </div>
-                    <div onChange={this.setPasswordMethod} className="settings__profile__data">
-                        <p>Новый пароль:</p>
-                        <ContentInput type="password"/>
-                    </div>
-                    <div onChange={this.setPasswordMethod} className="settings__profile__data">
-                        <p>Ещё раз новый пароль:</p>
-                        <ContentInput type="password"/>
-                    </div>
+                    <SettingsItem onChangeMethod={this.oldPasswordCheck} title="Старый пароль:" type="password"/>
+                    <SettingsItem onChangeMethod={this.setPasswordMethod} title="Новый пароль:" type="password"/>
+                    <SettingsItem onChangeMethod={this.setPasswordMethod} title="Ещё раз новый пароль:" type="password"/>
                 </div>
             </div>
         );
@@ -78,10 +61,7 @@ class Settings extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        firstName: state.profile.firstName,
-        secondName: state.profile.secondName,
-        email: state.profile.email,
-        password: state.profile.password
+        profile: state.profile
     }
 };
 
@@ -90,6 +70,6 @@ const mapDispatchToProps = {
     setSecondName,
     setEmail,
     setPassword
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Settings);
+export default connect(mapStateToProps, mapDispatchToProps)(SettingsContainer);
