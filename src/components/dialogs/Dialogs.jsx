@@ -9,11 +9,11 @@ class Dialogs extends React.Component{
         return(
             <div className="dialogs">
                 <div className="listOfDialogs">
-                    <h2>Друзья</h2>
+                    <h1>Друзья</h1>
                     <Dialog name="Мария Ким" status="Онлайн"/>
                 </div>
                 <div className="dialog">
-                    <h2>Диалог</h2>
+                    <h1>Диалог</h1>
                     <Messages />
                     <ContentInput placeholder="Введите сообщение..."/>
                 </div>

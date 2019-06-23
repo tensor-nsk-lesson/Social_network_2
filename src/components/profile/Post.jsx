@@ -1,30 +1,35 @@
 import React from 'react';
 
-class Post extends React.Component{
-    constructor(props) {
-        super(props);
-        this.photo = props.photo;
-        this.name = props.name;
-        this.content = props.content;
-        this.datetime = props.datetime;
-        this.url = props.url;
-    }
-    render(){
-        return(
-            <div className="profile__post">
-                <div className="profile__post__user">
-                    <img src="img/profile-images/post1.jpg" alt=""/>
-                    <div className="profile__post__userinfo">
-                        <a className="profile__post__username" href="#">
-                            {/*<span>М</span>ария <span>З</span>айцева*/}
-                            {this.name}
+class Post extends React.Component {
+    render() {
+        return (
+            <div className="post">
+                <div className="post__img">s</div>
+                <div className="post__info">
+                    <div className="post__header">
+                        <a className="post__author" href="#">
+                            {this.props.name}
                         </a>
-                        <p>{this.content}</p>
+                        <p className="post__datetime">{this.props.datetime}</p>
                     </div>
+                    <div className="post__content">{this.props.content}</div>
                 </div>
-                <h5>{this.datetime}</h5>
             </div>
         );
+        // return(
+        //     <div className="post">
+        //         <div className="post__info">
+        //             <div className="post__img"></div>
+        //             <div className="post__header">
+        //                 <a className="post__author" href="#">
+        //                     {this.props.name}
+        //                 </a>
+        //                 <div className="post__content">{this.props.content}</div>
+        //             </div>
+        //             <p className="post__datetime">{this.props.datetime}</p>
+        //         </div>
+        //     </div>
+        // );
     }
 }
 

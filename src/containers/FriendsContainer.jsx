@@ -2,8 +2,22 @@ import React from 'react'
 import '../components/friends/friends.css'
 import Friend from "../components/friends/Friend";
 import {connect} from "react-redux";
+import {mapFriendsToStore} from "../actions/profileActions";
+
+const friends_data = [
+    {
+        name: 'Антон Чусовитин'
+    },
+    {
+        name: 'Яна Казанина'
+    },
+];
 
 class FriendsContainer extends React.Component {
+    componentDidMount() {
+        this.props.mapFriendsToStore(friends_data)
+    }
+
     render() {
         let friends = [];
         for (let i = 0; i < this.props.friends.length; i++) {
@@ -13,10 +27,14 @@ class FriendsContainer extends React.Component {
     }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = state => {
     return {
-        friends: store.profile.friends
+        friends: state.profile.friends
     }
 };
 
-export default connect(mapStateToProps)(FriendsContainer);
+const mapDispatchToProps = {
+    mapFriendsToStore
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(FriendsContainer);

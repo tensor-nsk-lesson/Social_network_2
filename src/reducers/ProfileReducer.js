@@ -1,11 +1,18 @@
-import {SET_EMAIL, SET_FIRST_NAME, SET_PASSWORD, SET_SECOND_NAME} from "../actions/profileActions";
+import {
+    MAP_FRIENDS_TO_STORE, MAP_GROUPS_TO_STORE,
+    SET_EMAIL,
+    SET_FIRST_NAME,
+    SET_PASSWORD,
+    SET_SECOND_NAME
+} from "../actions/profileActions";
 
 const defaultState = {
+    auth: 0,
     firstName: '',
     secondName: '',
     email: '',
-    isOnline: 'онлайн',
     password: '',
+    isOnline: '',
     statistics: [
         {
             count: 'кол-во',
@@ -27,7 +34,7 @@ const defaultState = {
     posts: [
         {
             name: 'Имя Фамилия',
-            content: 'Содержание',
+            content: 'СодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержаниеСодержание',
             datetime: '00.00.00 00:00'
         }
     ],
@@ -48,21 +55,8 @@ const defaultState = {
             url: 'url'
         }
     ],
-    friends: [
-        {
-            name: 'Антон Чусовитин'
-        },
-        {
-            name: 'Яна Казанина'
-        },
-
-    ],
-    groups: [
-        {
-            title: 'Тензор',
-            desc: 'Лучшая компания в мире',
-        }
-    ]
+    friends: [],
+    subscriptions: []
 };
 
 export const profileReducer = (state = defaultState, action) => {
@@ -86,6 +80,16 @@ export const profileReducer = (state = defaultState, action) => {
             return {
                 ...state,
                 password: action.payload
+            };
+        case MAP_FRIENDS_TO_STORE:
+            return {
+                ...state,
+                friends: action.payload
+            };
+        case MAP_GROUPS_TO_STORE:
+            return {
+                ...state,
+                subscriptions: action.payload
             };
     }
     return state

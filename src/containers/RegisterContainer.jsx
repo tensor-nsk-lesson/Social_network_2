@@ -8,7 +8,7 @@ import RegisterForm from "../components/auth/RegisterForm";
 class RegisterContainer extends React.Component {
     render() {
         return (
-            <div className="main">
+            <div className="main__reg">
                 <div className="main__leftside"></div>
                 <div className="main__rightside">
                     <a className="logo" href="/">C</a>
@@ -31,10 +31,10 @@ class RegisterContainer extends React.Component {
                     }
                     <div className="download-buttons">
                         <a className="download-buttons__link" href="">
-                            <img className="download-buttons__img" src="img/google-play.png" alt=""/>
+                            <img className="download-buttons__img" src={require("../img/google-play.png")} alt=""/>
                         </a>
                         <a className="download-buttons__link" href="">
-                            <img className="download-buttons__img" src="img/app-store.png" alt=""/>
+                            <img className="download-buttons__img" src={require("../img/app-store.png")} alt=""/>
                         </a>
                     </div>
                     <ul className="bottom-navbar">

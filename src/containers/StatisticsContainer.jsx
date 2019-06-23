@@ -8,7 +8,7 @@ class StatisticsContainer extends React.Component{
         for (let i = 0; i < this.props.statistics.length; i++) {
             statisticsItems.push(<StatisticsItem count={this.props.statistics[i].count} title={this.props.statistics[i].title} />);
         }
-        return <div className="profile_info_stat">{statisticsItems}</div>;
+        return <div className="profile__info__stat">{statisticsItems}</div>;
     }
 }
 

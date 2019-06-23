@@ -1,3 +1,11 @@
+.main__reg{
+    display: flex;
+}
+
+.main{
+    dislay: none;
+}
+
 .main__leftside{
     height: 100vh;
     width: 65vw;
@@ -9,10 +17,8 @@
 
 .main__rightside{
     height: 100%;
-    width: 35%;
+    width: 35vw;
     text-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
     display: flex;
     align-items: center;  
     flex-direction: column;
@@ -62,20 +68,16 @@
     font-weight: bold;
 }
 
-a{
-    text-decoration: none;
-}
-
 .logo{
-    margin-left: 400px;
+    margin-left: 80%;
     font-size: 52px;
     font-weight: bold;
     color: #3f89ac;
 }
 
 .download-buttons{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .download-buttons__img{
@@ -101,4 +103,48 @@ a{
 .bottom-navbar__item__link{
     color: #000;
     text-decoration: none;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+    .main__leftside{
+        display: none;
+    }
+    .main__rightside{
+        width: 100%;
+    }
+    .download-buttons__img{
+        display: flex;
+        width: 1px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 720px) {
+    .main__leftside{
+        width: 30vw;
+    }
+    .main__rightside{
+        width: 70vw;
+        margin: 0 auto;
+    }
+}
+
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    .main__leftside{
+        width: 55vw;
+    }
+    .main__rightside{
+        width: 45vw;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .main__leftside{
+        width: 65vw;
+    }
+    .main__rightside{
+        width: 35vw;
+        margin: 0 auto;
+    }
 }

@@ -15,7 +15,7 @@ class Settings extends React.Component {
     }
 
     setFirstNameMethod = (event) => {
-        console.log(document.getElementById('test').value())
+        this.props.setFirstName(event.target.value);
     };
     setSecondNameMethod = (event) => {
         this.props.setSecondName(event.target.value);

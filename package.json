@@ -1,5 +1,5 @@
 {
-  "name": "weather",
+  "name": "socialochka",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,6 +19,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "https://socialnetworktensor.herokuapp.com/",
   "browserslist": {
     "production": [
       ">0.2%",

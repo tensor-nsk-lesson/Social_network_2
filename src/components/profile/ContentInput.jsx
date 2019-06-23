@@ -7,6 +7,7 @@ class ContentInput extends React.Component {
                    placeholder={this.props.placeholder}
                    value={this.props.value}
                    type={this.props.type}
+                   name={this.props.name}
             />
         );
     }
