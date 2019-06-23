@@ -11,8 +11,9 @@
 }
 
 .profile__photo{
-    width: 200px;
+    width: 300px;
     height: 300px;
+    border: 1px solid #000;
 }
 
 .profile__info{
@@ -61,7 +62,7 @@ span{
 .content__input{
     margin-top: 20px;
     padding: 8px 10px;
-    width: 100%;
+    width: inherit;
     border: 1px solid #5698b7;
 }
 
@@ -69,7 +70,6 @@ span{
     margin-top: 30px;
     width: 100%;
     display: flex;
-    align-items: flex-start;
 }
 
 .post__header{
@@ -90,6 +90,10 @@ span{
     background: #000;
 }
 
+.post__info{
+    width: 100%;
+}
+
 
 .post__content{
     max-width: 950px;
@@ -99,4 +103,89 @@ span{
 
 .post__author{
     margin-bottom: 5px;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+    .profile2{
+        display: block;
+    }
+    hr{
+        display: none;
+    }
+    .statisticsItem__span, .statisticsItem__title{
+        font-size: 14px;
+    }
+    .profile__info{
+        margin-left: 0px;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .profile__photo{
+        width: 100px;
+        height: 100px;
+    }
+    .profile__info__photos__img{
+        width: 100px;
+        height: 50px;
+    }
+    .post{
+        display: block;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 720px) {
+    .profile2{
+        display: block;
+    }
+    hr{
+        display: none;
+    }
+    .statisticsItem__span, .statisticsItem__title{
+        font-size: 20px;
+    }
+    .profile__info{
+        margin-left: 0px;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .profile__photo{
+        width: 200px;
+        height: 200px;
+    }
+    .profile__info__photos__img{
+        width: 150px;
+        height: 75px;
+    }
+    .post{
+        display: block;
+    }
+}
+
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    .profile2{
+        display: block;
+    }
+    hr{
+        display: none;
+    }
+    .statisticsItem__span, .statisticsItem__title{
+        font-size: 24px;
+    }
+    .profile__info{
+        margin-left: 0px;
+        margin-top: 10px;
+        width: 100%;
+    }
+    .profile__photo{
+        width: 200px;
+        height: 200px;
+    }
+    .profile__info__photos__img{
+        width: 200px;
+        height: 100px;
+    }
+    .post{
+        display: block;
+    }
 }

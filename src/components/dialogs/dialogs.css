@@ -1,14 +1,107 @@
-.dialogs{
-    display: flex;
-    justify-content: center;
+.dialogList{
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.listOfDialogs{
-    padding-right: 100px;
+.dialogs{
+    display: flex;
+    justify-content: space-around;
+}
+
+.dialog{
+    width: 580px;
 }
 
 .messages{
     height: 500px;
     width: 600px;
     overflow: auto;
+}
+
+.user__img{
+    width: 60px;
+    height: 60px;
+    background: #000;
+}
+
+.dialogs__title{
+    margin-bottom: 25px;
+}
+
+.dialogList__dialog~
+.dialogList__dialog{
+    margin-top: 20px;
+}
+
+.dialogList__dialog{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dialog__info{
+    display: flex;
+}
+
+.user__info{
+    margin-left: 10px;
+}
+
+
+.user__info a{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.user__info p{
+    font-size: 18px;
+    color: #00a234;
+}
+
+.dialog__message{
+    font-size: 20px;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+    .dialogs__list{
+        display: none;
+    }
+    .dialog{
+        width: 300px;
+    }
+    .messages{
+        width: 300px;
+        height: 400px;
+    }
+    .post__img{
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 720px) {
+    .dialogs__list{
+        display: none;
+    }
+    .dialog{
+        width: 400px;
+    }
+    .messages{
+        width: 400px;
+        height: 500px;
+    }
+    .post__img{
+        display: none;
+    }
+}
+
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    .dialog{
+        width: 320px;
+    }
+    .messages{
+        width: 320px;
+        height: 500px;
+    }
 }

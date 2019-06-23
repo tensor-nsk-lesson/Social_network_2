@@ -1,4 +1,5 @@
 .settings__profile__data{
+    width: 500px;
     display: flex;
     align-items: baseline;
 }

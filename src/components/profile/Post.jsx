@@ -4,7 +4,9 @@ class Post extends React.Component {
     render() {
         return (
             <div className="post">
-                <div className="post__img">s</div>
+                <div className="post__img">
+                    <img src="" alt=""/>
+                </div>
                 <div className="post__info">
                     <div className="post__header">
                         <a className="post__author" href="#">

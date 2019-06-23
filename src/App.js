@@ -3,13 +3,14 @@ import {Route, BrowserRouter} from 'react-router-dom';
 import Sidebar from './components/sidebar/Sidebar';
 import FriendsContainer from "./containers/FriendsContainer";
 import GroupsContainer from "./containers/GroupListContainer";
-import DialogsContainer from "./components/dialogs/Dialogs";
+import DialogsContainer from "./components/dialogs/DialogList";
 import Search from "./components/search/Search";
 import Register from "./containers/RegisterContainer";
 import {connect} from "react-redux";
 import ProfileContainer from "./containers/ProfileContainer";
-import Settings from "./components/settings/settings";
+import Settings from "./containers/SettingsContainer";
 import Group from "./components/groups/Group";
+import Dialog from "./components/dialogs/Dialog";
 
 class App extends React.Component {
     render() {
@@ -25,7 +26,7 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 {/*сделать проверка на авторизованность*/}
-                {this.props.auth == 1 ? (
+                {this.props.profile.auth == 1 ? (
                     <div>
                         <Route path="/register" component={WrapperRegister}/>
                         <Route path="/login" component={WrapperLogin}/>
@@ -37,6 +38,7 @@ class App extends React.Component {
                             <Route path="/profile" component={ProfileContainer}/>
                             <Route path="/friends" component={FriendsContainer}/>
                             <Route path="/dialogs" component={DialogsContainer}/>
+                            <Route path="/dialog" component={Dialog}/>
                             <Route path="/groups" component={GroupsContainer}/>
                             <Route path="/group" component={Group}/>
                             <Route path="/settings" component={Settings}/>
@@ -52,8 +54,7 @@ class App extends React.Component {
 
 const mapStateToProps = store => {
     return {
-        firstName: store.profile.firstName,
-        auth: store.profile.auth
+        profile: store.profile,
     }
 }
 

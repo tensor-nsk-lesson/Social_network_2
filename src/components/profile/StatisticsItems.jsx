@@ -1,17 +1,12 @@
 import React from 'react';
 
 class StatisticsItem extends React.Component{
-    constructor(props){
-        super(props);
-        this.count = props.count;
-        this.title = props.title;
-    }
     render(){
         return(
-            <h2>
-                <span>{this.count}</span>
+            <h2 className="statisticsItem__title">
+                <span className="statisticsItem__span">{this.props.count}</span>
                 <br/>
-                {this.title}
+                {this.props.title}
             </h2>
         );
     }

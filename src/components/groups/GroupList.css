@@ -14,8 +14,6 @@
 }
 
 .groupListItem__action{
-    display: flex;
-    align-items: center;
     margin-left: 100px;
     color: #a21b19;
     border: none;

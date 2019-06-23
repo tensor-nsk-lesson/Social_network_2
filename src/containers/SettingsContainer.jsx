@@ -1,9 +1,8 @@
 import React from 'react';
-import './settings.css'
-import ContentInput from "../profile/ContentInput";
+import '../components/settings/settings.css'
 import {connect} from "react-redux";
-import {setEmail, setFirstName, setPassword, setSecondName} from "../../actions/profileActions";
-import SettingsItem from "./SettingsItem";
+import SettingsItem from "../components/settings/SettingsItem";
+import {setEmail, setFirstName, setPassword, setSecondName} from "../actions/profileActions";
 
 class SettingsContainer extends React.Component {
     constructor(props) {

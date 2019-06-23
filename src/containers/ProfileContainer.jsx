@@ -16,7 +16,7 @@ class ProfileContainer extends React.Component{
                         <img className="profile__photo__img" src="img/profile-images/photo.jpg"/>
                     </div>
                     <div className="profile__info">
-                        <Header name={`${this.props.firstName} ${this.props.secondName}`} isOnline={this.props.isOnline}/>
+                        <Header name={`${this.props.profile.firstName} ${this.props.profile.secondName}`} isOnline={this.props.profile.isOnline}/>
                         <hr/>
                         <Photos />
                         <Statistics />
@@ -31,9 +31,7 @@ class ProfileContainer extends React.Component{
 
 const mapStateToProps = state => {
     return {
-        firstName: state.profile.firstName,
-        secondName: state.profile.secondName,
-        isOnline: state.profile.isOnline,
+        profile: state.profile
     }
 };
 

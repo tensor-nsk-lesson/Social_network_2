@@ -39,3 +39,50 @@ a{
   margin-top: 50px;
   margin-left: auto;
 }
+
+@media (min-width: 0px) and (max-width: 480px) {
+  .main__navbar{
+    width: 60px;
+  }
+  .main__content{
+    margin-top: 10px;
+    margin-left: 80px;
+  }
+  .main__navbar__items__img{
+    height: 22px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 720px) {
+  .main__navbar{
+    width: 65px;
+  }
+  .main__content{
+    margin-top: 10px;
+    margin-left: 80px;
+  }
+  .main__navbar__items__img{
+    height: 25px;
+  }
+}
+
+
+@media (min-width: 720px) and (max-width: 1024px) {
+  .main__navbar{
+    width: 75px;
+  }
+  .main__content{
+    margin-top: 10px;
+    margin-left: 100px;
+  }
+  .main__navbar__items__img{
+    height: 25px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .main__content{
+    margin-top: 10px;
+    margin-left: 150px;
+  }
+}

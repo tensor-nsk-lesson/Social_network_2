@@ -1,9 +1,9 @@
 import React from 'react';
 import './friends.css'
 
-class Friend extends React.Component{
-    render(){
-        return(
+class Friend extends React.Component {
+    render() {
+        return (
             <div className="friend">
                 <div className="friend__img">
                     <img src={this.props.img} alt=""/>
@@ -14,15 +14,15 @@ class Friend extends React.Component{
                     </a>
                     <button className="friend__info__write">Написать сообщение</button>
                 </div>
-                { this.props.isFriend == 1 ? (
+                {this.props.isFriend == 1 ? (
                     <button className="friend__delete">
-                        Удалить из друзей
+                        Удалить
                     </button>
-                    ) : (
-                        <button className="friend__add">
-                            Добавить в друзья
-                        </button>
-                    )
+                ) : (
+                    <button className="friend__add">
+                        Добавить
+                    </button>
+                )
                 }
             </div>
         );
