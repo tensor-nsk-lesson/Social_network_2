@@ -1,4 +1,8 @@
-#import hashlib
+import redis
+import hmac, hashlib
+import random
+
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 from . import db
 
@@ -22,5 +26,12 @@ def post_user_new(data):
 def post_user_auth(data):
     password = hash_pass(data['password'])
     sql = "SELECT * FROM \"User\" WHERE email = '%s' AND password = '%s' OR phone = '%s' AND password = '%s'" % (data['email'], password, data['phone'], password) 
-    return db.select(sql, False)
-
+    user_data = db.select(sql, False)
+    session = user_data['id']
+    randomString = random.getrandbits(10)
+    hash = hmac.new(randomString, session, sha1)
+    if r.set(hash, session, timeout=7200):
+        cookies = make_response(jsonify( { 'cookie': 'set' } ))
+        cookies.set_cookie('session', hash);
+        return user_data
+    return jsonify( { 'Error': 'Invalid e-mail or password' } )
