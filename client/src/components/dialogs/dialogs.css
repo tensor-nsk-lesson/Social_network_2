@@ -1,0 +1,149 @@
+
+.dialogList{
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dialogs{
+    display: flex;
+    justify-content: center;
+}
+
+.dialog{
+    width: 580px;
+}
+
+.messages{
+    height: 500px;
+    width: 600px;
+    overflow: auto;
+}
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,255,255,0.4)
+}
+
+.user__img{
+    width: 60px;
+    height: 60px;
+    background: #000;
+}
+
+.dialogs__title{
+    margin-bottom: 25px;
+}
+
+.dialogList__dialog~
+.dialogList__dialog{
+    margin-top: 20px;
+}
+
+.dialogList__dialog{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dialogs__list{
+    margin-left: 50px;
+}
+
+.dialog__info{
+    display: flex;
+}
+
+.user__info{
+    margin-left: 10px;
+}
+
+
+.user__info a{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.user__info p{
+    font-size: 18px;
+    color: #00a234;
+}
+
+.dialog__message{
+    font-size: 20px;
+}
+
+.dialogList h1{
+    margin-bottom: 30px;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+    .dialogs__list{
+        display: none;
+    }
+    .dialog{
+        width: 300px;
+    }
+    .messages{
+        width: 300px;
+        height: 400px;
+    }
+    .post__img{
+        display: none;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 720px) {
+    .dialogs__list{
+        display: none;
+    }
+    .dialog{
+        width: 400px;
+    }
+    .messages{
+        width: 400px;
+        height: 500px;
+    }
+    .post__img{
+        display: none;
+    }
+}
+
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    .dialog{
+        width: 320px;
+    }
+    .messages{
+        width: 320px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 1336px) {
+    .dialog{
+        width: 720px;
+    }
+    .messages{
+        width: 720px;
+        height: 525px;
+    }
+}

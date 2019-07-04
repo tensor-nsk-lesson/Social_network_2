@@ -1,0 +1,150 @@
+.main__reg{
+    display: flex;
+}
+
+.main{
+    dislay: none;
+}
+
+.main__leftside{
+    height: 100vh;
+    width: 65vw;
+    background-image: url(../../img/m_ls_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.main__rightside{
+    height: 100%;
+    width: 35vw;
+    text-align: center;
+    display: flex;
+    align-items: center;  
+    flex-direction: column;
+}
+
+.head{
+    font-size: 32px;
+}
+.desc{
+    font-size: 22px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.form__input{
+    border-radius: 30px;
+    padding: 6px 10px;
+    width: 260px;
+    height: 28px;
+    outline: none;
+}
+
+.form__register-button,
+.form__login-button{
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.form__input~
+.form__input{
+    margin-top: 10px
+}
+
+.form__register-button,
+.form__login-button{
+    background: #fff;
+    border: none;
+}
+
+.form__register-button:hover,
+.form__login-button:hover{
+    color: #3f89ac;
+    font-weight: bold;
+}
+
+.logo{
+    margin-left: 80%;
+    font-size: 52px;
+    font-weight: bold;
+    color: #3f89ac;
+}
+
+.download-buttons{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.download-buttons__img{
+    display: flex;
+    width: 200px;
+}
+.download-buttons__link~
+.download-buttons__link{
+    margin-bottom: 50px;
+}
+
+.bottom-navbar{
+    margin-top: 10px;
+    list-style-type: none;
+}
+.bottom-navbar__item{
+    display: inline-block;
+}
+.bottom-navbar__item~
+.bottom-navbar__item{
+    margin-left: 25px;
+}
+.bottom-navbar__item__link{
+    color: #000;
+    text-decoration: none;
+}
+
+@media (min-width: 0px) and (max-width: 480px) {
+    .main__leftside{
+        display: none;
+    }
+    .main__rightside{
+        width: 100%;
+    }
+    .download-buttons__img{
+        display: flex;
+        width: 1px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 720px) {
+    .main__leftside{
+        width: 30vw;
+    }
+    .main__rightside{
+        width: 70vw;
+        margin: 0 auto;
+    }
+}
+
+
+@media (min-width: 720px) and (max-width: 1024px) {
+    .main__leftside{
+        width: 55vw;
+    }
+    .main__rightside{
+        width: 45vw;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1025px) {
+    .main__leftside{
+        width: 65vw;
+    }
+    .main__rightside{
+        width: 35vw;
+        margin: 0 auto;
+    }
+}

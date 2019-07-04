@@ -1,0 +1,52 @@
+.groupListItem{
+    display: flex;
+}
+
+.groupListItem~
+.groupListItem{
+    margin-top: 25px;
+}
+
+.groupListItem_img, .groupListItem__img img{
+    width: 70px;
+    height: 70px;
+    background: #000;
+}
+
+.groupListItem__action{
+    margin-left: 100px;
+    color: #a21b19;
+    border: none;
+    background: #fff;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.groupListItem__info{
+    margin-left: 10px;
+    margin-right: auto;
+}
+.groupListItem__info a{
+    color: #1977a2;
+}
+
+.groups{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.groupListItem__action:hover{
+    color: #a20908;
+}
+
+.group__info__title{
+    font-size: 24px;
+}
+
+.group__info__desc{
+    font-size: 18px;
+    font-weight: normal;
+}

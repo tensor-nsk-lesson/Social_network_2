@@ -1,0 +1,28 @@
+.group__title{
+    font-size: 50px;
+    color: #326ca2;
+}
+
+.group__image{
+    width: 125px;
+    height: 125px;
+    background: #000;
+}
+
+.group__desc{
+    font-size: 25px;
+}
+
+.group__info{
+    text-align: left;
+}
+
+.group{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.group__header{
+    display: flex;
+    justify-content: space-between;
+}
